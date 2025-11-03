@@ -1,0 +1,13 @@
+{
+  "name": "p5js-xmas-jukebox",
+  "version": "1.0.0",
+  "description": "p5.js Christmas Jukebox",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "serve": "python3 -m http.server 8000"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
+}
+
