@@ -1,28 +1,46 @@
-let soundFiles = [
-    'assets/sound1.mp3',
-    'assets/sound2.mp3',
-    'assets/sound3.mp3'
+let backgroundFiles = [
+    'assets/background1.png',
+    'assets/background2.png',
+    'assets/background3.png'
 ];
 
+let currentBackgroundIndex = 0;
+let backgroundImages = {};
 let snowflakes = [];
 let flames = [];
 let stars = [];
 let shootingStar = null;
 let nextShootingStarTime = 0;
-let currentAnimation = 'snow';
-let backgroundImages = {};
+let currentAnimation = 0;
+let currentSound = null;
 
-function loadBackgroundImage(key, path) {
-    loadImage(path, img => {
-        backgroundImages[key] = img;
-    });
+let animations = [  
+    { name: 'Snow', draw: drawSnow, bg: 20 },
+    { name: 'Fire', draw: drawFire, bg: 20 },
+    { name: 'Stars', draw: drawStars, bg: 0 }
+];
+
+function stopOldAndPlay(sound) {
+    if (currentSound) {
+      if (currentSound.isPlaying) {
+        currentSound.stop();
+      }
+     }  
+    sound.play();
+    currentSound = sound;
 }
 
-let animations = {
-    snow: { name: 'Snow', draw: drawSnow, bg: 20 },
-    fire: { name: 'Fire', draw: drawFire, bg: 20 },
-    stars: { name: 'Stars', draw: drawStars, bg: 0 }
-};
+function playSoundFile(path) {
+    loadSound(path, stopOldAndPlay);
+}
+
+
+let buttons = [
+    { name: 'Play Sound 1', x: 100, y: 100, width: 150, height: 40, callback: () => playSoundFile('assets/sound1.wav') },
+    { name: 'Play Sound 2', x: 100, y: 160, width: 150, height: 40, callback: () => playSoundFile('assets/sound2.wav') },
+    { name: 'Switch Animation', x: 100, y: 280, width: 150, height: 40, callback: switchAnimation },
+    { name: 'Switch Background', x: 100, y: 340, width: 150, height: 40, callback: switchBackground }
+];
 
 function initFire(numFlames = 30, baseY = null, baseX = null, fireWidth = 200) {
     flames = [];
@@ -171,20 +189,24 @@ function drawStars() {
 }
 
 function switchAnimation() {
-    const animKeys = Object.keys(animations);
-    const currentIndex = animKeys.indexOf(currentAnimation);
-    const nextIndex = (currentIndex + 1) % animKeys.length;
-    currentAnimation = animKeys[nextIndex];
+    currentAnimation = (currentAnimation + 1) % animations.length;
 }
 
-let buttons = [
-    { name: 'Play Sound 1', x: 100, y: 100, width: 150, height: 40, callback: () => loadSound('assets/sound1.mp3', sound => sound.play()) },
-    { name: 'Play Sound 2', x: 100, y: 160, width: 150, height: 40, callback: () => loadSound('assets/sound2.mp3', sound => sound.play()) },
-    { name: 'Play Sound 3', x: 100, y: 220, width: 150, height: 40, callback: () => loadSound('assets/sound3.mp3', sound => sound.play()) },
-    { name: 'Switch Animation', x: 100, y: 280, width: 150, height: 40, callback: switchAnimation }
-];
+function switchBackground() {
+    currentBackgroundIndex = (currentBackgroundIndex + 1) % backgroundFiles.length;
+    // Load the new background if not already loaded
+    if (!backgroundImages[currentBackgroundIndex]) {
+        loadImage(backgroundFiles[currentBackgroundIndex], img => {
+            backgroundImages[currentBackgroundIndex] = img;
+        }, () => {
+            console.warn(`Failed to load background: ${backgroundFiles[currentBackgroundIndex]}`);
+        });
+    }
+}
+
 
 function drawButton(btn) {
+    // Reset text fill and font and stroke
     fill(100, 150, 255);
     rect(btn.x, btn.y, btn.width, btn.height, 5);
     fill(255);
@@ -197,26 +219,47 @@ function isMouseOver(btn) {
            mouseY >= btn.y && mouseY <= btn.y + btn.height;
 }
 
+function drawText(txt, x, y, color = [255, 255, 255], fontSize = 8, fontFamily = 'Arial', align = LEFT) {
+    fill(color[0], color[1], color[2]);
+    textSize(fontSize);
+    textFont(fontFamily);
+    textAlign(align);
+    text(txt, x, y);
+}
+
 function setup() {
     createCanvas(800, 600);
     initSnow(50);
     initFire(30);
     initStars(100);
     nextShootingStarTime = millis() + random(3000, 6000);
+      
+    // Load all background images
+    loadImage(backgroundFiles[0], img => {
+        backgroundImages[0] = img;
+    });
+    loadImage(backgroundFiles[1], img => {
+        backgroundImages[1] = img;
+    });
+    loadImage(backgroundFiles[2], img => {
+        backgroundImages[2] = img;
+    });
 }
 
 function draw() {
-    const anim = animations[currentAnimation];
-    if (anim.bgImage && backgroundImages[anim.bgImage]) {
-        image(backgroundImages[anim.bgImage], 0, 0, width, height);
+    // Draw background image if available, otherwise use animation background color
+    if (backgroundImages[currentBackgroundIndex]) {
+        image(backgroundImages[currentBackgroundIndex], 0, 0, width, height);
     } else {
-        background(anim.bg || 0);
+        background(animations[currentAnimation].bg || 0);
     }
-    anim.draw();
+    
+    animations[currentAnimation].draw();
     drawButton(buttons[0]);
     drawButton(buttons[1]);
     drawButton(buttons[2]);
     drawButton(buttons[3]);
+    drawText('Merry Christmas!', 400, 300, [255, 0, 0], 32, 'Arial', CENTER);
 }
 
 function mousePressed() {
