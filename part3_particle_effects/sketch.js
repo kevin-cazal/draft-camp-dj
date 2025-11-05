@@ -164,6 +164,9 @@ let snowflakes = [];
 let flames = [];
 // Step 4 (A2): Add variables for the stars animation
 let stars = [];
+// Step 5 (A1): Add variables for the shooting star feature
+let shootingStar = null;
+let nextShootingStarTime = 0;
 let sounds = [];
 let backgrounds = [];
 let currentText = null;
@@ -333,6 +336,98 @@ function setupStars() {
                twinkle: random(0, TWO_PI)          // Random starting twinkle value
            });
        }
+       // Step 5 (B): Initialize the shooting star timing
+       shootingStar = null;
+       nextShootingStarTime = millis() + random(3000, 6000);
+}
+
+// Step 5 (D1): Create a new shooting star object
+function createShootingStar() {
+    return {
+        x: random(width),                    // Random starting x position
+        y: random(0, height * 0.3),         // Start in top third of screen
+        trail: [],                           // Array to store the trail points
+        speed: random(5, 10),                // Random speed
+        angle: random(PI/6, PI/3),           // Random angle (downward)
+        life: 255                            // Starting life (for fade effect)
+    };
+}
+
+// Step 5 (D2): Check if it's time to create a new shooting star
+function handleShootingStarCreation() {
+    // Check if it's time to create a new shooting star
+    // millis() returns how many milliseconds have passed since the program started
+    if (millis() >= nextShootingStarTime) {
+        // If there's no shooting star currently, create one
+        if (!shootingStar) {
+            shootingStar = createShootingStar();
+        }
+        // Schedule the next shooting star (3-6 seconds from now)
+        nextShootingStarTime = millis() + random(3000, 6000);
+    }
+}
+
+// Step 5 (D3): Update the shooting star position and life
+function updateShootingStar() {
+    // Add current position to the trail
+    shootingStar.trail.push({
+        x: shootingStar.x,
+        y: shootingStar.y,
+        alpha: shootingStar.life
+    });
+    
+    // Move the shooting star based on its angle and speed
+    // cos() and sin() convert an angle to x and y movement
+    shootingStar.x = shootingStar.x + cos(shootingStar.angle) * shootingStar.speed;
+    shootingStar.y = shootingStar.y + sin(shootingStar.angle) * shootingStar.speed;
+    
+    // Make it fade out over time
+    shootingStar.life = shootingStar.life - 8;
+}
+
+// Step 5 (D4): Draw the trail behind the shooting star
+function drawShootingStarTrail() {
+    // Draw the trail (the line behind the shooting star)
+    // We loop backwards through the trail array
+    for (let i = shootingStar.trail.length - 1; i >= 0; i--) {
+        let point = shootingStar.trail[i];
+        
+        // Set the line color with transparency
+        stroke(255, 255, 255, point.alpha);
+        strokeWeight(2);
+        
+        // Draw a line from this point to the previous point
+        if (i > 0) {
+            let prevPoint = shootingStar.trail[i - 1];
+            line(point.x, point.y, prevPoint.x, prevPoint.y);
+        }
+        
+        // Fade out the trail point
+        point.alpha = point.alpha - 10;
+        
+        // Remove trail points that have completely faded
+        if (point.alpha <= 0) {
+            shootingStar.trail.splice(i, 1);
+        }
+    }
+}
+
+// Step 5 (D5): Check if the shooting star should be removed
+function shouldRemoveShootingStar() {
+    // If the shooting star has gone off screen or faded completely, remove it
+    return shootingStar.x > width || shootingStar.y > height || shootingStar.life <= 0;
+}
+
+// Step 5 (D6): Update and draw the shooting star
+function updateAndDrawShootingStar() {
+    if (shootingStar) {
+        updateShootingStar();
+        drawShootingStarTrail();
+        
+        if (shouldRemoveShootingStar()) {
+            shootingStar = null;
+        }
+    }
 }
 
 // Step 4 (C): Define a draw function for the stars animation (called by the draw function)
@@ -359,6 +454,10 @@ function drawStars() {
         // Draw the star as a circle
         ellipse(star.x, star.y, star.size);
     }
+    
+    // Step 5 (C): Add shooting star logic
+    handleShootingStarCreation();
+    updateAndDrawShootingStar();
 }
 
 function setup() {

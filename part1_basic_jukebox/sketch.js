@@ -127,27 +127,22 @@ function setup() {
 }
 
 function draw() {
-    // Begin Intro
-    drawBackground(currentBackground); // Step 1
-    drawText(currentText); // Step 2
-    // Begin Step 3
-    drawButton(button1);
-    drawButton(button2);
-    drawButton(button3);
-    drawButton(button4);
-    drawButton(button5);
-    // End Step 3
-    // End Intro
-    // Begin Particle Effects
-    // End Particle Effects
+    drawText(currentText); // Step 1
+    drawBackground(currentBackground); // Step 2
+    drawButton(button1); // Step 3
+    drawButton(button2); // Step 3
+    drawButton(button3); // Step 3
+    drawButton(button4); // Step 3
+    drawButton(button5); // Step 3
     
 }
 
-function isMouseOverButton(button) {
+function isMouseOverButton(button) { // Step 3 (C3): Add a function to check if the mouse is over a button
     return mouseX >= button.x && mouseX <= button.x + button.width && mouseY >= button.y && mouseY <= button.y + button.height;
 }
 
 function mousePressed() {
+    // Step 3 (C3): Add a function to handle button clicks
     if (isMouseOverButton(button1)) {
         button1.callback();
     }
