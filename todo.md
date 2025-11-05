@@ -377,6 +377,7 @@ Create materials that students can take home to continue learning and reference 
 6. ⬜ Complete take-home package
 7. ⬜ Instructor guides
 8. ⬜ Testing and QA
+9. ⬜ Proper base assets (nice background images and sound)
 
 
 ---
