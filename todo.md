@@ -371,6 +371,7 @@ Create materials that students can take home to continue learning and reference 
 2. ⬜ Replace critical placeholders (coordinate systems, flow diagrams)
 3. ⬜ Delivery method documentation
 4. ⬜ Consistency check
+X. ⬜ French version
 
 ### Medium Priority (Must Complete before camp)
 5. ⬜ Remaining placeholders
@@ -378,9 +379,11 @@ Create materials that students can take home to continue learning and reference 
 7. ⬜ Instructor guides
 8. ⬜ Testing and QA
 9. ⬜ Proper base assets (nice background images and sound)
-
+X. ⬜ French version
 
 ---
+
+
 
 ## Notes
 
