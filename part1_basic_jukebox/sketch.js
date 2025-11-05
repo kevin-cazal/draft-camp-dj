@@ -127,8 +127,9 @@ function setup() {
 }
 
 function draw() {
-    drawText(currentText); // Step 1
+    background(0);
     drawBackground(currentBackground); // Step 2
+    drawText(currentText); // Step 1
     drawButton(button1); // Step 3
     drawButton(button2); // Step 3
     drawButton(button3); // Step 3

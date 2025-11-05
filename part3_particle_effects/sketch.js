@@ -1,12 +1,13 @@
 // Step 1: refactor all buttons into an array of objects
 // Step 2: refactor named callback functions into anonymous functions
 let buttons = [
+    // Left column: Sounds
     {
         name: "Sound 1",
-        x: 50,
-        y: 50,
-        width: 80,
-        height: 40,
+        x: 20,
+        y: 20,
+        width: 100,
+        height: 35,
         callback: function() {
             stopCurrentSound();
             currentSound = sounds[0];
@@ -15,10 +16,10 @@ let buttons = [
     },
     {
         name: "Sound 2",
-        x: 50,
-        y: 100,
-        width: 80,
-        height: 40,
+        x: 20,
+        y: 65,
+        width: 100,
+        height: 35,
         callback: function() {
             stopCurrentSound();
             currentSound = sounds[1];
@@ -26,112 +27,116 @@ let buttons = [
         }
     },
     {
+        name: "My Sound",
+        x: 20,
+        y: 110,
+        width: 100,
+        height: 35,
+        callback: function() {
+            stopCurrentSound();
+            currentSound = sounds[2];
+            currentSound.play();
+        }
+    },
+    // Left column: Backgrounds
+    {
         name: "Background 1",
-        x: 50,
-        y: 150,
-        width: 80,
-        height: 40,
+        x: 20,
+        y: 170,
+        width: 100,
+        height: 35,
         callback: function() {
             currentBackground = backgrounds[0];
         }
     },
     {
         name: "Background 2",
-        x: 50,
-        y: 200,
-        width: 80,
-        height: 40,
+        x: 20,
+        y: 215,
+        width: 100,
+        height: 35,
         callback: function() {
             currentBackground = backgrounds[1];
         }
     },
     {
         name: "Background 3",
-        x: 50,
-        y: 250,
-        width: 80,
-        height: 40,
+        x: 20,
+        y: 260,
+        width: 100,
+        height: 35,
         callback: function() {
             currentBackground = backgrounds[2];
         }
     },
     {
-        name: "My Sound",
-        x: 50,
-        y: 300,
-        width: 80,
-        height: 40,
-        callback: function() {
-            currentSound = sounds[2];
-            currentSound.play();
-        }
-    },
-    {
         name: "My Background",
-        x: 50,
-        y: 350,
-        width: 80,
-        height: 40,
+        x: 20,
+        y: 305,
+        width: 100,
+        height: 35,
         callback: function() {
             currentBackground = backgrounds[3];
         }
     },
     { // Step 1 (D1): Add a button to disable the background
-        name: "Disable Background",
-        x: 50,
-        y: 400,
-        width: 80,
-        height: 40,
+        name: "Disable BG",
+        x: 20,
+        y: 350,
+        width: 100,
+        height: 35,
         callback: function() {
             currentBackground = null;
         }
     },
+    // Right column: Animations
     {
         name: "Snow",
-        x: 50,
-        y: 450,
-        width: 80,
-        height: 40,
+        x: 680,
+        y: 20,
+        width: 100,
+        height: 35,
         callback: function() {
             currentAnimation = animations[0];
         }
     },
     { // Step 3 (D1): Add a button to enable the fire animation
         name: "Fire",
-        x: 50,
-        y: 500,
-        width: 80,
-        height: 40,
+        x: 680,
+        y: 65,
+        width: 100,
+        height: 35,
         callback: function() {
             currentAnimation = animations[1];
         }
     },
-    {  // Step 1 (D2): Add a button to disable animation
-        name: "Disable Animation",
-        x: 50,
-        y: 550,
-        width: 80,
-        height: 40,
-        callback: function() {
-            currentAnimation = null;
-        }
-    },
     { // Step 4 (D1): Add a button to enable the stars animation
         name: "Stars",
-        x: 50,
-        y: 600,
-        width: 80,
-        height: 40,
+        x: 680,
+        y: 110,
+        width: 100,
+        height: 35,
         callback: function() {
             currentAnimation = animations[2];
         }
     },
+    {  // Step 1 (D2): Add a button to disable animation
+        name: "Disable Anim",
+        x: 680,
+        y: 155,
+        width: 100,
+        height: 35,
+        callback: function() {
+            currentAnimation = null;
+        }
+    },
+    // Bottom right: Hide button
     {
         name: "Hide Buttons",
-        x: 50,
-        y: 650,
-        width: 80,
-        height: 40,
+        x: 680,
+        y: 545,
+        width: 100,
+        height: 35,
         callback: function() {
             buttonsVisible = false;
         }
@@ -338,7 +343,7 @@ function setupStars() {
        }
        // Step 5 (B): Initialize the shooting star timing
        shootingStar = null;
-       nextShootingStarTime = millis() + random(3000, 6000);
+       nextShootingStarTime = millis() + random(500, 2500);
 }
 
 // Step 5 (D1): Create a new shooting star object
@@ -466,7 +471,7 @@ function setup() {
     sounds = [
         loadSound('assets/sound1.wav'),
         loadSound('assets/sound2.wav'),
-        loadSound('assets/my_sound.wav')
+        loadSound('assets/my_sound.mp3')
     ];
     backgrounds = [
         loadImage('assets/background1.png'),

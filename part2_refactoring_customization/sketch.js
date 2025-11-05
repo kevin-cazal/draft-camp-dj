@@ -62,6 +62,7 @@ let buttons = [
         width: 80,
         height: 40,
         callback: function() {
+            stopCurrentSound();
             currentSound = sounds[2];
             currentSound.play();
         }
@@ -138,7 +139,7 @@ function setup() {
     sounds = [
         loadSound('assets/sound1.wav'),
         loadSound('assets/sound2.wav'),
-        loadSound('assets/my_sound.wav')
+        loadSound('assets/my_sound.mp3')
     ];
     backgrounds = [
         loadImage('assets/background1.png'),
