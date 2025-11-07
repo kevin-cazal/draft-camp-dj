@@ -33,19 +33,12 @@ A jukebox is a machine that plays music. Our digital jukebox will be an interact
 
 Text is one of the most fundamental ways to communicate information. In p5.js, displaying text is like writing on a digital canvas - you decide what to write, where to write it, and how it should look.
 
-**Real-world analogy**: Imagine a billboard. You choose:
-- The message ("OPEN 24 HOURS")
-- Where it's placed (on the highway)
-- The size (large enough to read from far away)
-- The color (bright and eye-catching)
-
 ### Step 1 (A): Add Variables
 
 Variables are essential for storing information that you want to use later. We'll create a variable to store the text we want to display.
 
 **Why use variables?** Instead of hardcoding "Merry Christmas!" everywhere in your code, you store it in a variable. This makes it easy to change later - update it in one place, and it changes everywhere.
 
-**Example from daily life**: Imagine you're making a recipe with "butter" mentioned 10 times. If you decide to use "margarine" instead, you have to change it 10 times. But if you had a variable like "fat = butter", you'd only change it once!
 
 Here's how to declare a variable in JavaScript:
 
@@ -71,10 +64,6 @@ The [`setup()`](https://p5js.org/reference/#/p5/setup) function runs once when y
 - Set initial values for variables
 - Initialize any starting states
 
-**Real-world analogy**: Before opening a store, you:
-1. Set up the display cases (create canvas)
-2. Stock the shelves (load assets)
-3. Set the "OPEN" sign (initialize variables)
 
 Now let's set our text variable in `setup()`:
 
@@ -147,21 +136,13 @@ function draw() {
 
 A background is like the backdrop on a theater stage - it sets the scene and atmosphere. We'll learn to load and display images as backgrounds.
 
-**Real-world analogy**: On your phone, you can set a wallpaper. When you change the wallpaper, everything else stays the same, but the background looks different. That's what we're doing here!
 
 ### How Images Work in p5.js
 
-Images need to be loaded before you can use them. This is asynchronous, meaning:
-- You start loading the image
-- Your program continues running other code
-- When the image finishes loading, it's ready to use
+Images need to be loaded before you can use them. Once loaded you can display them on the canvas.
 
 **Why this matters**: If you try to draw an image before it's loaded, you'll get an error or see nothing. It's like trying to play a DVD before it's finished loading in the player.
 
-**Daily life example**: Ordering food delivery:
-1. You place the order (start loading image)
-2. You can do other things while waiting (program continues)
-3. When food arrives (image loads), you can use it (display it)
 
 ### Step 2 (A): Add Background Variables
 
@@ -356,10 +337,6 @@ function handleButton5Click() {
 5. The callback changes `currentBackground`
 6. Next frame, `draw()` uses the new background
 
-**Real-world analogy**: Like changing TV channels:
-- You press a channel button (click button)
-- The TV switches to that channel (changes `currentBackground`)
-- The screen shows the new channel (draws new background)
 
 ### Step 2: Draw Background and Buttons
 
@@ -566,11 +543,6 @@ function mousePressed() {
 
 **Why check all buttons?** We don't know which button was clicked, so we check each one. Only one (or none) will match.
 
-**Real-world analogy**: Like a security guard checking multiple doors:
-- Someone knocks (mouse click)
-- Guard checks door 1 (isMouseOverButton(button1))
-- Not that one? Check door 2 (button2)
-- Found it! Open that door (call callback)
 
 ### Step 3: Draw All Buttons
 
@@ -638,7 +610,7 @@ Here's how everything works together:
 
 ### Experimentation Ideas
 
-Try modifying your jukebox:
+Try modifying your jukebox (part 2):
 - **Add more sounds**: Create `sound3`, `sound4`, etc.
 - **Add more backgrounds**: Load additional images
 - **Change colors**: Modify button and text colors

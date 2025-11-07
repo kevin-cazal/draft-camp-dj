@@ -16,8 +16,6 @@ Particle effects are visual animations created by many small objects (particles)
 - Stars twinkling in the night sky
 - Sparks, smoke, rain, or confetti
 
-**Real-world analogy**: Like a magic show where the magician throws sparkles into the air. Each sparkle is a particle, and together they create a beautiful effect!
-
 **Visual Concept**: [SCHEMA PLACEHOLDER: Diagram showing individual particles vs. the collective effect they create]
 
 ### Why This is Challenging
@@ -41,25 +39,18 @@ Every particle effect follows the same pattern:
 
 1. **Initialization**: Create particles with starting properties
    - Set position, size, speed, color, etc.
-   - Like preparing ingredients before cooking
 
 2. **Update**: Change particle properties each frame
    - Move particles
    - Change size, color, or other properties
    - Check boundaries and reset if needed
-   - Like cooking - things change over time
 
 3. **Draw**: Display particles at their current state
    - Draw each particle at its current position
    - Apply colors and effects
-   - Like serving the dish - showing the final result
 
 **Visual Concept**: [SCHEMA PLACEHOLDER: Flow diagram showing Initialization → Update Loop → Draw Loop, with examples of what happens in each phase]
 
-**Real-world analogy**: Like a flock of birds:
-- **Initialization**: Birds start in different positions
-- **Update**: Birds move, change direction each moment
-- **Draw**: You see the birds flying
 
 ### The Animation Loop
 
@@ -73,8 +64,6 @@ Every particle effect follows the same pattern:
 5. Result: Looks like smooth movement!
 
 **Visual Concept**: [SCHEMA PLACEHOLDER: Flipbook animation showing how individual frames create movement illusion]
-
-**Real-world analogy**: Like a flipbook - each page shows a slightly different picture. Flip through quickly, and it looks like movement.
 
 ### Understanding Arrays of Objects
 
@@ -185,8 +174,6 @@ function drawSnow() {
 - Each snowflake has a `sway` property (how much it moves side to side)
 - Each frame, add `sway` to the x position
 - If snowflake hits left or right edge, reverse the sway direction
-
-**Real-world analogy**: Like a pendulum swinging back and forth. When it hits the edge, it bounces back.
 
 **Your Task**: Modify your snow setup to include `sway` property, and update the draw function to apply horizontal movement.
 

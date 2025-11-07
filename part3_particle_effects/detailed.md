@@ -14,8 +14,6 @@ Particle effects are visual animations created by many small objects (particles)
 - Stars twinkling in the night sky
 - Sparks, smoke, rain, or confetti
 
-**Real-world analogy**: Like a magic show where the magician throws sparkles into the air. Each sparkle is a particle, and together they create a beautiful effect!
-
 ### Why Use Particle Effects?
 
 Particle effects add:
@@ -24,7 +22,6 @@ Particle effects add:
 - **Dynamic content**: Animations that change over time
 - **Polish**: Professional-looking effects
 
-**Real-world example**: Like adding decorations to a room - they make it more festive and interesting!
 
 ### Key Concepts You'll Learn
 
@@ -75,10 +72,6 @@ let animations = [
 - Store multiple animations in one array
 - Switch between animations easily
 - Keep code organized and modular
-
-**Real-world analogy**: Like a TV remote:
-- Each button (animation) has a setup (what channel) and display (what you see)
-- You can switch between channels (animations) easily
 
 ### Step 1 (A2): Add Snow Variables
 
@@ -168,9 +161,6 @@ function drawSnow() {
 3. Frame 2: Draw them in new positions (slightly lower)
 4. Repeat 60 times per second → looks like continuous falling!
 
-**Real-world analogy**: Like a flipbook:
-- Each page shows snowflakes in slightly different positions
-- When you flip through pages quickly, it looks like they're moving
 
 **Why reset instead of removing?** To create continuous snowfall. When a snowflake reaches the bottom, we send it back to the top. This creates an endless loop!
 
@@ -312,8 +302,6 @@ function setup() {
 - Call each animation's `setupFunction()` to initialize it
 - Set `currentAnimation` to the first animation (snow)
 
-**Why initialize all?** So all animations are ready when the user switches to them. It's like preparing all ingredients before cooking - everything is ready when needed!
-
 **Test it!** Click the "Snow" button - you should see snowflakes falling!
 
 ---
@@ -324,7 +312,6 @@ function setup() {
 
 Real snow doesn't fall straight down - it sways side to side in the wind. We'll add this realistic movement!
 
-**Real-world analogy**: Like leaves falling - they don't just drop straight, they flutter and sway.
 
 ### Step 2 (A): Create Alternative Snow Functions
 
@@ -392,10 +379,6 @@ function drawSnowAlt() {
 - If it hits left or right edge, it bounces back
 - Creates natural swaying motion!
 
-**Real-world analogy**: Like a pendulum:
-- It swings back and forth
-- When it hits the edge, it bounces back
-- Creates a smooth, natural motion
 
 **Update the animations array**:
 ```javascript
@@ -615,7 +598,6 @@ function setupStars() {
 - `brightness`: Base brightness (150-255, some dimmer, some brighter)
 - `twinkle`: Starting value for twinkle animation (0 to TWO_PI, which is 2π ≈ 6.28)
 
-**Why TWO_PI?** We'll use `sin()` function which repeats every 2π radians. This creates a smooth repeating cycle.
 
 **Real-world analogy**: Like placing stars on a canvas:
 - Each star has a unique position
