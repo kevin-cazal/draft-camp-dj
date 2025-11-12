@@ -2,18 +2,16 @@
 
 ## Target Audience
 
-**Primary Audience**: High school students (ages 14-18) with basic programming experience (completed Workshop 1 or equivalent).
+**Primary Audience**: High school students (ages 14-18) who are new to programming or have minimal programming experience.
 
 **Prerequisites**:
-- Completion of Workshop 1: Basic Jukebox (or equivalent experience)
-- Understanding of basic p5.js concepts (setup, draw, variables, functions)
-- Familiarity with objects and properties
-- Basic understanding of sound playback in p5.js
+- Basic familiarity with using a computer and web browser
 - Ability to follow step-by-step instructions
+- No prior programming experience required - we'll explain everything as we go!
 
-**Learning Level**: Intermediate/Beginner-Plus
+**Learning Level**: Beginner
 
-**Accessibility**: This workshop builds on Workshop 1 concepts. Students should be comfortable with the basics before attempting this more complex project. The goal is to introduce object-oriented thinking and more advanced interaction patterns.
+**Accessibility**: This workshop is designed for absolute beginners. We'll explain all programming concepts (variables, functions, objects) from scratch. The goal is to introduce programming through a fun, interactive project while learning object-oriented thinking and interactive programming patterns.
 
 ---
 
@@ -87,10 +85,10 @@
 
 ### Breakdown by Section:
 
-**Introduction & Setup** (10-15 minutes)
+**Introduction & Setup** (15-20 minutes)
 - Welcome and introduction
 - Understanding the project goals
-- Review of Workshop 1 concepts
+- Introduction to programming basics (variables, functions)
 - Bootstrap code explanation
 - Testing basic functionality
 
@@ -140,19 +138,19 @@
 ### Factors Affecting Duration:
 
 **Faster Groups** (2-2.5 hours):
-- Students with good grasp of Workshop 1 concepts
-- Quick learners who understand object-oriented thinking
+- Quick learners who grasp programming concepts easily
+- Students who understand object-oriented thinking quickly
 - Good problem-solving skills
 - Minimal technical issues
 
 **Average Groups** (2.5-3 hours):
-- Students comfortable with Workshop 1 basics
 - Normal learning pace
+- Students comfortable with basic programming concepts
 - Some experimentation and questions
 - Occasional troubleshooting
 
 **Slower Groups** (3-3.5 hours):
-- Students needing review of Workshop 1 concepts
+- Students needing more time to understand programming basics
 - More time for object-oriented concept explanation
 - Frequent questions and clarification
 - More time for experimentation

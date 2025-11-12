@@ -18,11 +18,27 @@ Une table de mixage DJ est un outil qui vous permet de jouer plusieurs sons simu
 
 ### Concepts clés
 
+**Fonctions** : Les fonctions sont des blocs de code réutilisables qui effectuent une tâche spécifique. Pensez-y comme des recettes - vous écrivez la recette une fois, puis vous pouvez la suivre (appeler la fonction) chaque fois que vous en avez besoin. Dans p5.js, `setup()` s'exécute une fois au démarrage du programme, et `draw()` s'exécute en continu (60 fois par seconde).
+
+**Variables** : Les variables sont des conteneurs qui stockent des informations. Vous leur donnez un nom (comme `monNom`) et vous leur assignez une valeur (comme `"Alice"`). Les variables peuvent stocker différents types de données : texte (chaînes de caractères), nombres, valeurs vrai/faux (booléens), et plus encore.
+
 **Objets** : Les objets sont des collections de données liées regroupées ensemble. Pensez à une carte de contact - elle a un nom, un numéro de téléphone, une adresse, etc. Dans notre table de mixage, chaque piste est un objet qui contient tout ce qui concerne cette piste : son son, volume, état de lecture, bouton et slider.
 
 **Propriétés** : Les propriétés sont des morceaux d'information stockés dans un objet. Comme la taille, le poids et le nom d'une personne sont des propriétés d'un objet personne. Nos objets track ont des propriétés comme `sound`, `volume`, et `isPlaying`.
 
 **Pensée orientée objet** : Au lieu d'avoir des variables séparées dispersées, nous organisons les données liées en objets. Cela rend le code plus facile à comprendre et à maintenir.
+
+### Expliquer les concepts aux débutants
+
+Lors de l'enseignement de cet atelier à des débutants absolus, vous devrez peut-être expliquer :
+
+**Fonctions** : "Une fonction est comme une recette. Vous écrivez les étapes une fois, puis vous pouvez utiliser cette recette (appeler la fonction) chaque fois que vous en avez besoin. `setup()` est une recette spéciale qui s'exécute une fois au démarrage de votre programme. `draw()` est une recette qui s'exécute encore et encore."
+
+**Variables** : "Une variable est comme une boîte étiquetée. Vous mettez une étiquette dessus (le nom de la variable) et vous mettez quelque chose à l'intérieur (la valeur). Plus tard, vous pouvez changer ce qui est à l'intérieur, mais l'étiquette reste la même."
+
+**Objets** : "Un objet est comme un classeur avec plusieurs tiroirs. Chaque tiroir a une étiquette (nom de propriété) et contient quelque chose (valeur de propriété). Tous les tiroirs appartiennent à un classeur (objet)."
+
+**Propriétés** : "Une propriété est un tiroir dans le classeur. Elle a une étiquette (le nom de la propriété) et contient quelque chose (la valeur de la propriété)."
 
 ---
 
@@ -37,14 +53,6 @@ Un objet est un moyen de regrouper des informations liées ensemble. Au lieu d'a
 - Rend le code plus facile à comprendre
 - Rend le code plus facile à maintenir
 - Les développeurs professionnels utilisent cette approche
-
-**Exemple du monde réel** : Un album musical :
-- Titre : "Greatest Hits"
-- Artiste : "The Band"
-- Année : 2020
-- Chansons : [liste de chansons]
-
-Toutes ces informations appartiennent à UN album, donc elles sont stockées dans UN objet album.
 
 ### Étape 1 (A) : Créer votre premier objet Track
 
@@ -128,7 +136,6 @@ Les sons doivent être chargés avant de pouvoir les jouer. Dans p5.js, nous uti
 - Cela empêche les erreurs d'essayer de jouer des sons qui ne sont pas chargés
 - C'est la méthode standard pour charger les assets dans p5.js
 
-**Analogie du monde réel** : Comme préparer les ingrédients avant de cuisiner - vous rassemblez tout ce dont vous avez besoin d'abord, puis vous pouvez les utiliser.
 
 ### Étape 2 (A) : Charger les sons dans preload()
 
@@ -186,7 +193,7 @@ Les boutons sont des éléments interactifs qui répondent aux clics. Dans p5.js
 
 **Exemple du monde réel** : Un interrupteur :
 - Position : sur le mur (emplacement spécifique)
-- Label : peut-être "Lumières" écrit dessus
+- Label : peut-être "Lumière de la cuisine" ou "Lumière du salon" écrit dessus
 - Action : allume/éteint les lumières quand on appuie
 
 ### Étape 3 (A) : Créer les boutons avec createButton()

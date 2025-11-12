@@ -25,11 +25,6 @@ By the end of this workshop, you'll have:
 
 File uploads let users select files from their computer and use them in your program. Think of it like choosing a photo to upload to social media - you click a button, select a file, and it becomes part of the application.
 
-**Real-world example**: When you upload a profile picture:
-1. You click "Choose File"
-2. A file browser opens
-3. You select an image file
-4. The image appears in the application
 
 ### How File Uploads Work in p5.js
 

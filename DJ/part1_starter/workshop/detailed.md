@@ -18,11 +18,27 @@ A DJ mixing deck is a tool that lets you play multiple sounds simultaneously and
 
 ### Key Concepts
 
+**Functions**: Functions are reusable blocks of code that perform a specific task. Think of them like recipes - you write the recipe once, then you can follow it (call the function) whenever you need it. In p5.js, `setup()` runs once when the program starts, and `draw()` runs continuously (60 times per second).
+
+**Variables**: Variables are containers that store information. You give them a name (like `myName`) and assign a value to them (like `"Alice"`). Variables can store different types of data: text (strings), numbers, true/false values (booleans), and more.
+
 **Objects**: Objects are collections of related data grouped together. Think of a contact card - it has a name, phone number, address, etc. In our mixing deck, each track is an object that contains everything related to that track: its sound, volume, play state, button, and slider.
 
 **Properties**: Properties are pieces of information stored in an object. Like a person's height, weight, and name are properties of a person object. Our track objects have properties like `sound`, `volume`, and `isPlaying`.
 
 **Object-Oriented Thinking**: Instead of having separate variables scattered around, we organize related data into objects. This makes code easier to understand and maintain.
+
+### Explaining Concepts to Beginners
+
+When teaching this workshop to absolute beginners, you may need to explain:
+
+**Functions**: "A function is like a recipe. You write the steps once, then you can use that recipe (call the function) whenever you need it. `setup()` is a special recipe that runs once when your program starts. `draw()` is a recipe that runs over and over again."
+
+**Variables**: "A variable is like a labeled box. You put a label on it (the variable name) and put something inside (the value). Later, you can change what's inside, but the label stays the same."
+
+**Objects**: "An object is like a filing cabinet with multiple drawers. Each drawer has a label (property name) and contains something (property value). All the drawers belong to one filing cabinet (object)."
+
+**Properties**: "A property is one drawer in the filing cabinet. It has a label (the property name) and contains something (the property value)."
 
 ---
 
@@ -37,14 +53,6 @@ An object is a way to group related information together. Instead of having sepa
 - Makes code easier to understand
 - Makes code easier to maintain
 - Professional developers use this approach
-
-**Real-world example**: A music album:
-- Title: "Greatest Hits"
-- Artist: "The Band"
-- Year: 2020
-- Songs: [list of songs]
-
-All this information belongs to ONE album, so it's stored in ONE album object.
 
 ### Step 1 (A): Creating Your First Track Object
 
@@ -128,7 +136,6 @@ Sounds need to be loaded before you can play them. In p5.js, we use the `preload
 - It prevents errors from trying to play sounds that aren't loaded
 - It's the standard way to load assets in p5.js
 
-**Real-world analogy**: Like preparing ingredients before cooking - you gather everything you need first, then you can use them.
 
 ### Step 2 (A): Loading Sounds in preload()
 
@@ -186,7 +193,7 @@ Buttons are interactive elements that respond to clicks. In p5.js, you can creat
 
 **Real-world example**: A light switch:
 - Position: on the wall (specific location)
-- Label: maybe "Lights" written on it
+- Label: maybe "Kitchen Light" or "Living Room Light" written on it
 - Action: turns lights on/off when pressed
 
 ### Step 3 (A): Creating Buttons with createButton()

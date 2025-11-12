@@ -16,7 +16,6 @@ We're going to add professional DJ features:
 - **Crossfader**: Smoothly transition between tracks using trigonometry
 - **BPM visualization**: Pulsating circles that react to the beat
 
-**Real-world analogy**: Think of professional DJ software like Serato or Traktor - they have all these features for professional mixing!
 
 ### Key Concepts
 

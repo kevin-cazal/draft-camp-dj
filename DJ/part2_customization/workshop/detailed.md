@@ -13,7 +13,6 @@ We're going to add customization features that let users:
 - Upload their own sounds for each track
 - Personalize their DJ deck experience
 
-**Real-world analogy**: Think of customizing your phone - you can change the wallpaper (background image) and set custom ringtones (sounds). We're doing the same thing for the DJ deck!
 
 ### Key Concepts
 
@@ -39,11 +38,6 @@ File uploads are a way for users to select files from their computer and use the
 5. Your program receives information about the file
 6. You can then load and use that file
 
-**Real-world example**: Uploading a profile picture:
-- Click "Choose File"
-- Browse to find your photo
-- Select the photo
-- The photo appears in the application
 
 ### File Types
 

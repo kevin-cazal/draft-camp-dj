@@ -13,7 +13,6 @@ Nous allons ajouter des fonctionnalités de personnalisation qui permettent aux 
 - Télécharger leurs propres sons pour chaque piste
 - Personnaliser leur expérience de table de mixage DJ
 
-**Analogie du monde réel** : Pensez à personnaliser votre téléphone - vous pouvez changer le fond d'écran (image de fond) et définir des sonneries personnalisées (sons). Nous faisons la même chose pour la table de mixage DJ !
 
 ### Concepts clés
 
@@ -39,11 +38,6 @@ Les téléchargements de fichiers sont un moyen pour les utilisateurs de sélect
 5. Votre programme reçoit des informations sur le fichier
 6. Vous pouvez ensuite charger et utiliser ce fichier
 
-**Exemple du monde réel** : Télécharger une photo de profil :
-- Cliquez sur "Choisir un fichier"
-- Parcourez pour trouver votre photo
-- Sélectionnez la photo
-- La photo apparaît dans l'application
 
 ### Types de fichiers
 

@@ -29,18 +29,23 @@ function setup() {
 function draw() {
     background(255);
 }
-
-function mousePressed() {
-    console.log("Mouse clicked at:", mouseX, mouseY);
-}
 ```
 
-**Ce que cela fait :**
-- `setup()` crée votre canvas (votre zone de dessin) - s'exécute une fois au démarrage du programme
-- `draw()` s'exécute en continu (60 fois par seconde) - c'est là que vous dessinerez tout
-- `mousePressed()` détecte quand vous cliquez - utile pour les tests
+**Comprendre setup() et draw()** : Ce sont deux fonctions spéciales dans p5.js qui fonctionnent ensemble :
 
-**Essayez maintenant** : Cliquez n'importe où sur le canvas et vérifiez la console de votre navigateur (appuyez sur F12 → onglet Console). Vous devriez voir les coordonnées s'afficher !
+- **`setup()`** - Cette fonction s'exécute **une fois** au tout début lorsque votre programme démarre. C'est comme préparer votre espace de travail avant de commencer. Ici, elle crée votre canvas (votre zone de dessin). Utilisez `setup()` pour les choses qui ne doivent se produire qu'une seule fois : créer le canvas, charger les paramètres initiaux, créer les boutons et les curseurs.
+
+- **`draw()`** - Cette fonction s'exécute **indéfiniment** (60 fois par seconde, en continu). C'est comme une boucle qui ne s'arrête jamais. À chaque image, p5.js appelle `draw()` pour mettre à jour et afficher tout à l'écran. Utilisez `draw()` pour les choses qui doivent se produire de manière répétée : dessiner des formes, mettre à jour les positions, vérifier les changements, lire les valeurs des curseurs.
+
+**Pensez-y comme ceci** : 
+- `setup()` = "Tout préparer" (se produit une fois)
+- `draw()` = "Continuer à mettre à jour et afficher les choses" (se produit indéfiniment)
+
+**Ce que ce code fait :**
+- `setup()` crée votre canvas (votre zone de dessin) - s'exécute une fois au démarrage du programme
+- `draw()` définit la couleur de fond en blanc - s'exécute en continu, rafraîchissant l'écran 60 fois par seconde
+
+**Comprendre les fonctions** : Le code ci-dessus utilise des **fonctions** - ce sont comme des recettes qui contiennent des instructions. `setup()` et `draw()` sont des fonctions spéciales que p5.js appelle automatiquement. Nous créerons nos propres fonctions plus tard dans ce projet !
 
 **Documentation** : Apprenez-en plus sur [`setup()`](https://p5js.org/reference/#/p5/setup) et [`draw()`](https://p5js.org/reference/#/p5/draw) dans la documentation p5.js.
 
@@ -52,14 +57,9 @@ Avant de commencer à coder, comprenons comment tout s'articule :
 
 ### Le concept clé : Les objets
 
-Dans ce projet, nous allons utiliser **des objets** pour organiser notre code. Un objet est comme un conteneur qui regroupe des informations liées ensemble.
+Dans ce projet, nous allons utiliser **des objets** pour organiser notre code.
 
-**Analogie du monde réel** : Pensez à une piste musicale sur un CD :
-- La piste a un nom
-- Elle a un fichier son
-- Elle a un niveau de volume
-- Elle peut être en lecture ou en pause
-- Elle a des contrôles (boutons, sliders)
+**Qu'est-ce qu'un objet ?** Un objet est comme un classeur avec plusieurs tiroirs. Chaque tiroir (appelé "propriété") a une étiquette et stocke quelque chose de spécifique. Tous les tiroirs appartiennent à un classeur (l'objet).
 
 Toutes ces informations appartiennent ensemble car elles concernent UNE piste. C'est pourquoi nous les mettons toutes dans UN objet !
 
@@ -84,14 +84,13 @@ Un objet est un moyen de regrouper des informations liées ensemble. Au lieu d'a
 - Cela rend le code plus facile à maintenir
 - C'est ainsi que les développeurs professionnels organisent le code
 
-**Exemple du monde réel** : Un contact dans votre téléphone :
-- Nom : "John"
-- Téléphone : "555-1234"
-- Email : "john@example.com"
-
-Toutes ces informations appartiennent à UNE personne, donc elles sont stockées dans UN objet contact.
 
 ### Étape 1A : Créer votre premier objet Track
+
+**Comprendre les variables et les objets** : Avant de créer l'objet, comprenons ce que nous faisons :
+- Une **variable** est comme une boîte étiquetée qui stocke des informations. Nous allons créer une variable appelée `track1` pour stocker les informations de notre piste.
+- Un **objet** est une collection d'informations liées regroupées ensemble. Au lieu d'avoir des variables séparées comme `track1Sound`, `track1Volume`, etc., nous mettons tout ce qui concerne la piste 1 dans un objet.
+- Une **propriété** est une information stockée dans un objet. Chaque propriété a un nom (comme `volume`) et une valeur (comme `0.5`).
 
 **Le concept** : Chaque piste doit stocker :
 - Le fichier son qu'elle jouera
@@ -137,12 +136,13 @@ Toutes ces informations appartiennent à UNE personne, donc elles sont stockées
 
 Les sons doivent être chargés avant de pouvoir les jouer. Dans p5.js, nous utilisons la fonction `preload()` pour charger les sons avant que le programme ne démarre.
 
+**Comprendre la fonction preload()** : `preload()` est une fonction spéciale dans p5.js qui s'exécute automatiquement avant `setup()`. Elle est conçue pour charger des fichiers (comme des images et des sons) afin qu'ils soient prêts lorsque votre programme démarre. Pensez-y comme préparer les ingrédients avant de cuisiner - vous rassemblez tout ce dont vous avez besoin d'abord, puis vous pouvez les utiliser.
+
 **Pourquoi preload() ?**
 - Cela garantit que les sons sont prêts avant d'essayer de les utiliser
 - Cela s'exécute avant `setup()`, donc tout est chargé quand le programme démarre
 - Cela empêche les erreurs d'essayer de jouer des sons qui ne sont pas encore chargés
 
-**Analogie du monde réel** : Comme préparer les ingrédients avant de cuisiner - vous rassemblez tout ce dont vous avez besoin d'abord, puis vous pouvez les utiliser.
 
 ### Étape 2A : Charger les sons dans les objets Track
 
@@ -163,6 +163,8 @@ Les sons doivent être chargés avant de pouvoir les jouer. Dans p5.js, nous uti
 ### Étape 2B : Définir le volume initial
 
 **La logique** : Quand les sons sont chargés, vous devriez définir leur volume initial pour qu'ils soient prêts à jouer au bon niveau.
+
+**Pourquoi dans `setup()` ?** Rappelez-vous, `setup()` s'exécute une fois au début. C'est parfait pour définir les valeurs initiales qui ne doivent se produire qu'une seule fois - comme définir le volume de départ. Nous n'avons pas besoin de définir le volume 60 fois par seconde, juste une fois au démarrage du programme !
 
 **Ce que vous devez faire** : Dans `setup()`, après avoir créé le canvas, définissez le volume pour les deux pistes. Vous utiliserez la valeur de volume stockée dans chaque objet track et l'appliquerez au son.
 
@@ -187,10 +189,12 @@ Les boutons sont des éléments interactifs qui répondent aux clics. Dans p5.js
 
 **Exemple du monde réel** : Un interrupteur :
 - Position : sur le mur (emplacement spécifique)
-- Label : peut-être "Lumières" écrit dessus
+- Label : peut-être "Lumière de la cuisine" ou "Lumière du salon" écrit dessus
 - Action : allume/éteint les lumières quand on appuie
 
 ### Étape 3A : Créer les boutons avec createButton()
+
+**Pourquoi dans `setup()` ?** Les boutons sont créés une fois et restent à l'écran. Puisque `setup()` s'exécute une fois au début, c'est l'endroit parfait pour créer tous vos boutons. Vous ne voulez pas créer de nouveaux boutons 60 fois par seconde dans `draw()` - cela créerait des milliers de boutons !
 
 **La logique** : Dans p5.js, vous pouvez créer des boutons en utilisant `createButton()`. Cela crée un élément bouton HTML qui gère automatiquement les clics - vous n'avez pas besoin de vérifier manuellement si la souris a cliqué sur le bouton !
 
@@ -232,6 +236,8 @@ Les sliders sont des contrôles qui permettent aux utilisateurs d'ajuster une va
 
 ### Étape 4A : Créer les sliders
 
+**Pourquoi dans `setup()` ?** Tout comme les boutons, les sliders sont créés une fois et restent à l'écran. Puisque `setup()` s'exécute une fois au début, c'est l'endroit parfait pour créer tous vos sliders. Nous lirons leurs valeurs dans `draw()` (qui s'exécute en continu), mais nous ne les créons qu'une seule fois dans `setup()`.
+
 **Le concept** : Dans p5.js, vous créez des sliders en utilisant `createSlider()`. Chaque piste a besoin de son propre slider.
 
 **Ce que vous devez faire** : Dans `setup()`, après avoir créé les boutons, créez des sliders pour chaque piste. Pour chaque slider :
@@ -252,6 +258,8 @@ Les sliders sont des contrôles qui permettent aux utilisateurs d'ajuster une va
 **Testez !** Vous devriez voir deux sliders à l'écran que vous pouvez faire glisser !
 
 ### Étape 4B : Ajouter les labels de volume
+
+**Pourquoi dans `draw()` ?** Les labels sont dessinés sur le canvas, et tout ce qui est dessiné sur le canvas doit être dans `draw()` car `draw()` s'exécute en continu pour rafraîchir l'écran. Si vous dessinez du texte dans `setup()`, il n'apparaîtrait qu'une seule fois et pourrait être recouvert par le fond. Dans `draw()`, les labels sont redessinés à chaque image, donc ils restent toujours visibles.
 
 **La logique** : Les utilisateurs doivent savoir ce que contrôlent les sliders. Ajouter des labels rend l'interface plus claire.
 
@@ -322,6 +330,8 @@ Une bascule change entre deux états. Pour play/pause :
 ### Comprendre les mises à jour en temps réel
 
 Le volume doit se mettre à jour continuellement pendant que l'utilisateur déplace le slider. Cela se produit dans la fonction `draw()`, qui s'exécute plusieurs fois par seconde.
+
+**Pourquoi utiliser `draw()` pour cela ?** Rappelez-vous, `draw()` s'exécute indéfiniment (60 fois par seconde). Cela le rend parfait pour vérifier les choses qui changent continuellement, comme les positions des sliders. À chaque image, nous vérifions la valeur du slider et mettons à jour le volume. Cela crée un contrôle fluide en temps réel - lorsque vous déplacez le slider, le volume change immédiatement !
 
 **La logique** :
 1. Lisez la valeur actuelle du slider

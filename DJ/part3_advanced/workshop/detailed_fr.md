@@ -16,7 +16,6 @@ Nous allons ajouter des fonctionnalités DJ professionnelles :
 - **Crossfader** : Transitionner en douceur entre les pistes en utilisant la trigonométrie
 - **Visualisation BPM** : Cercles pulsants qui réagissent au rythme
 
-**Analogie du monde réel** : Pensez aux logiciels DJ professionnels comme Serato ou Traktor - ils ont toutes ces fonctionnalités pour le mixage professionnel !
 
 ### Concepts clés
 

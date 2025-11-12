@@ -25,11 +25,6 @@ Félicitations pour avoir terminé le DJ Mixing Deck Starter ! Maintenant, vous 
 
 Les téléchargements de fichiers permettent aux utilisateurs de sélectionner des fichiers depuis leur ordinateur et de les utiliser dans votre programme. Pensez-y comme choisir une photo à télécharger sur les réseaux sociaux - vous cliquez sur un bouton, sélectionnez un fichier, et il devient partie de l'application.
 
-**Exemple du monde réel** : Quand vous téléchargez une photo de profil :
-1. Vous cliquez sur "Choisir un fichier"
-2. Un navigateur de fichiers s'ouvre
-3. Vous sélectionnez un fichier image
-4. L'image apparaît dans l'application
 
 ### Comment fonctionnent les téléchargements de fichiers dans p5.js
 
