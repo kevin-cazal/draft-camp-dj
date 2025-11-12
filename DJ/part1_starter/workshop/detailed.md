@@ -143,15 +143,15 @@ The `preload()` function runs automatically before `setup()`. This is where we l
 
 ```javascript
 function preload() {
-    track1.sound = loadSound('assets/sound1.wav');
-    track2.sound = loadSound('assets/sound2.wav');
+    track1.sound = loadSound('assets/sound1.mp3');
+    track2.sound = loadSound('assets/sound2.mp3');
 }
 ```
 
 **Understanding the code**:
-- [`loadSound('assets/sound1.wav')`](https://p5js.org/reference/#/p5.sound/p5.SoundFile) loads the sound file
+- [`loadSound('assets/sound1.mp3')`](https://p5js.org/reference/#/p5.sound/p5.SoundFile) loads the sound file
 - `track1.sound = ...` stores the loaded sound in the track1 object
-- The path `'assets/sound1.wav'` means the file is in the `assets` folder
+- The path `'assets/sound1.mp3'` means the file is in the `assets` folder
 
 **File organization**: Put your sound files in an `assets` folder in your project. Common formats: WAV, MP3, OGG.
 

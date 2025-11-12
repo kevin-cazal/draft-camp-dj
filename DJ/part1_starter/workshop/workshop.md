@@ -198,16 +198,16 @@ Sounds need to be loaded before you can play them. In p5.js, we use the `preload
 
 ```javascript
 function preload() {
-    track1.sound = loadSound('assets/sound1.wav');
-    track2.sound = loadSound('assets/sound2.wav');
+    track1.sound = loadSound('assets/sound1.mp3');
+    track2.sound = loadSound('assets/sound2.mp3');
 }
 ```
 
 **Understanding the code**:
 - `preload()` runs automatically before `setup()`
-- `loadSound('assets/sound1.wav')` loads the sound file
+- `loadSound('assets/sound1.mp3')` loads the sound file
 - `track1.sound = ...` stores it in the track object
-- Replace `'assets/sound1.wav'` and `'assets/sound2.wav'` with your actual sound file names
+- The sound files are already provided in the `assets` folder as `sound1.mp3` and `sound2.mp3`
 
 **The process**: Think of it like this - you're telling p5.js "go get this sound file and store it in the track object so we can use it later."
 

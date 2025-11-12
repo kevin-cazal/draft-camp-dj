@@ -24,8 +24,8 @@ This guide outlines the step-by-step plan for building a DJ mixing deck with two
 ## Step 2: Load Sounds
 
 ### Step 2 (A): Load Sounds in preload()
-- Load `'assets/sound1.wav'` into `track1.sound`
-- Load `'assets/sound2.wav'` into `track2.sound`
+- Load `'assets/sound1.mp3'` into `track1.sound`
+- Load `'assets/sound2.mp3'` into `track2.sound`
 
 ### Step 2 (B): Set Initial Volume in setup()
 - Set `track1.sound.setVolume(track1.volume)`

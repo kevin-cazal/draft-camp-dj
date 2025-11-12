@@ -72,8 +72,8 @@ let track2 = {
 
 function preload() {
     // Load the sound files
-    track1.sound = loadSound('assets/sound1.wav');
-    track2.sound = loadSound('assets/sound2.wav');
+    track1.sound = loadSound('assets/sound1.mp3');
+    track2.sound = loadSound('assets/sound2.mp3');
 }
 
 function setup() {
