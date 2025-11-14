@@ -130,53 +130,7 @@ Un objet est un moyen de regrouper des informations liées ensemble. Au lieu d'a
 
 ---
 
-## Étape 2 : Charger les sons
-
-### Comprendre le chargement des sons
-
-Les sons doivent être chargés avant de pouvoir les jouer. Dans p5.js, nous utilisons la fonction `preload()` pour charger les sons avant que le programme ne démarre.
-
-**Comprendre la fonction preload()** : `preload()` est une fonction spéciale dans p5.js qui s'exécute automatiquement avant `setup()`. Elle est conçue pour charger des fichiers (comme des images et des sons) afin qu'ils soient prêts lorsque votre programme démarre. Pensez-y comme préparer les ingrédients avant de cuisiner - vous rassemblez tout ce dont vous avez besoin d'abord, puis vous pouvez les utiliser.
-
-**Pourquoi preload() ?**
-- Cela garantit que les sons sont prêts avant d'essayer de les utiliser
-- Cela s'exécute avant `setup()`, donc tout est chargé quand le programme démarre
-- Cela empêche les erreurs d'essayer de jouer des sons qui ne sont pas encore chargés
-
-
-### Étape 2A : Charger les sons dans les objets Track
-
-**Le concept** : Dans `preload()`, vous devez charger chaque fichier son et l'assigner à la propriété `sound` de la piste. Cela connecte le fichier son à l'objet track.
-
-**Où vont les sons ?** Mettez vos fichiers son dans un dossier `assets` dans votre projet. Formats courants : WAV, MP3, OGG.
-
-**Ce que vous devez faire** : Dans `preload()`, chargez deux fichiers son et assignez-les aux objets track :
-- Chargez le premier fichier son depuis le dossier assets et assignez-le à `track1.sound`
-- Chargez le deuxième fichier son depuis le dossier assets et assignez-le à `track2.sound`
-
-**Le processus** : Pensez-y comme ceci - vous dites à p5.js "va chercher ce fichier son et stocke-le dans l'objet track pour que nous puissions l'utiliser plus tard."
-
-**Documentation** : [`loadSound()`](https://p5js.org/reference/#/p5.sound/p5.SoundFile) charge les fichiers son. Note : Vous devez inclure la bibliothèque p5.sound !
-
-**Testez !** Les sons devraient se charger sans erreur. Vérifiez la console si quelque chose ne va pas.
-
-### Étape 2B : Définir le volume initial
-
-**La logique** : Quand les sons sont chargés, vous devriez définir leur volume initial pour qu'ils soient prêts à jouer au bon niveau.
-
-**Pourquoi dans `setup()` ?** Rappelez-vous, `setup()` s'exécute une fois au début. C'est parfait pour définir les valeurs initiales qui ne doivent se produire qu'une seule fois - comme définir le volume de départ. Nous n'avons pas besoin de définir le volume 60 fois par seconde, juste une fois au démarrage du programme !
-
-**Ce que vous devez faire** : Dans `setup()`, après avoir créé le canvas, définissez le volume pour les deux pistes. Vous utiliserez la valeur de volume stockée dans chaque objet track et l'appliquerez au son.
-
-**Pourquoi ?** Cela garantit que les sons commencent au bon niveau de volume quand ils sont joués pour la première fois.
-
-**Le processus** : Pour chaque piste, prenez la valeur de volume de l'objet track et appliquez-la au son. Cela connecte le réglage de volume à la lecture réelle du son.
-
-**Documentation** : [`.setVolume()`](https://p5js.org/reference/#/p5.sound/p5.SoundFile/setVolume) définit le volume d'un son.
-
----
-
-## Étape 3 : Créer les boutons
+## Étape 2 : Créer les boutons
 
 ### Comprendre les boutons
 
@@ -192,7 +146,7 @@ Les boutons sont des éléments interactifs qui répondent aux clics. Dans p5.js
 - Label : peut-être "Lumière de la cuisine" ou "Lumière du salon" écrit dessus
 - Action : allume/éteint les lumières quand on appuie
 
-### Étape 3A : Créer les boutons avec createButton()
+### Étape 2A : Créer les boutons avec createButton()
 
 **Pourquoi dans `setup()` ?** Les boutons sont créés une fois et restent à l'écran. Puisque `setup()` s'exécute une fois au début, c'est l'endroit parfait pour créer tous vos boutons. Vous ne voulez pas créer de nouveaux boutons 60 fois par seconde dans `draw()` - cela créerait des milliers de boutons !
 
@@ -201,20 +155,66 @@ Les boutons sont des éléments interactifs qui répondent aux clics. Dans p5.js
 **Ce que vous devez faire** : Dans `setup()`, après avoir créé le canvas, créez des boutons pour chaque piste. Pour chaque bouton :
 1. Créez le bouton en utilisant le label du bouton de la piste
 2. Positionnez-le en utilisant les coordonnées de position du bouton de la piste
-3. Connectez-le à une fonction qui gérera le clic - cette fonction devrait basculer l'état de lecture de la piste
+3. Connectez-le à une fonction qui gérera le clic - pour l'instant, cette fonction peut simplement afficher un message dans la console avec `console.log()`
 
 **Pourquoi utiliser createButton() ?**
 - C'est plus simple que de dessiner les boutons manuellement
 - Cela gère automatiquement la détection des clics
 - Cela crée un vrai bouton HTML avec lequel les utilisateurs peuvent interagir
 
-**La connexion** : Quand vous connectez un bouton à une fonction, vous dites "quand ce bouton est cliqué, exécute cette fonction." La fonction recevra des informations sur quelle piste contrôler.
+**La connexion** : Quand vous connectez un bouton à une fonction, vous dites "quand ce bouton est cliqué, exécute cette fonction." Pour l'instant, votre fonction peut simplement afficher un message pour vérifier que le bouton fonctionne.
 
 **Concept visuel** : [PLACEHOLDER SCHÉMA : Diagramme montrant la création et le positionnement des boutons]
 
 **Documentation** : [`createButton()`](https://p5js.org/reference/#/p5/createButton) crée un élément bouton.
 
-**Testez !** Vous devriez voir deux boutons affichés à l'écran !
+**Testez !** Vous devriez voir deux boutons affichés à l'écran ! Cliquez sur les boutons et regardez la console dans l'éditeur p5.js (en bas de l'écran). Vous devriez voir vos messages `console.log()` apparaître chaque fois que vous cliquez sur un bouton. C'est une excellente façon de vérifier que vos boutons fonctionnent avant d'ajouter la fonctionnalité complète de play/pause !
+
+---
+
+## Étape 3 : Charger les sons
+
+### Comprendre le chargement des sons
+
+Les sons doivent être chargés avant de pouvoir les jouer. Dans p5.js, nous utilisons la fonction `preload()` pour charger les sons avant que le programme ne démarre.
+
+**Comprendre la fonction preload()** : `preload()` est une fonction spéciale dans p5.js qui s'exécute automatiquement avant `setup()`. Elle est conçue pour charger des fichiers (comme des images et des sons) afin qu'ils soient prêts lorsque votre programme démarre. Pensez-y comme préparer les ingrédients avant de cuisiner - vous rassemblez tout ce dont vous avez besoin d'abord, puis vous pouvez les utiliser.
+
+**Pourquoi preload() ?**
+- Cela garantit que les sons sont prêts avant d'essayer de les utiliser
+- Cela s'exécute avant `setup()`, donc tout est chargé quand le programme démarre
+- Cela empêche les erreurs d'essayer de jouer des sons qui ne sont pas encore chargés
+
+
+### Étape 3A : Charger les sons dans les objets Track
+
+**Le concept** : Dans `preload()`, vous devez charger chaque fichier son et l'assigner à la propriété `sound` de la piste. Cela connecte le fichier son à l'objet track.
+
+**Où vont les sons ?** Mettez vos fichiers son dans un dossier `assets` dans votre projet. Formats courants : WAV, MP3, OGG.
+
+**Ce que vous devez faire** : Dans `preload()`, chargez deux fichiers son et assignez-les aux objets track :
+- Chargez le premier fichier son depuis le dossier assets et assignez-le à `track1.sound`
+- Chargez le deuxième fichier son depuis le dossier assets et assignez-le à `track2.sound`
+
+**Le processus** : Pensez-y comme ceci - vous dites à p5.js "va chercher ce fichier son et stocke-le dans l'objet track pour que nous puissions l'utiliser plus tard."
+
+**Documentation** : [`loadSound()`](https://p5js.org/reference/#/p5.sound/p5.SoundFile) charge les fichiers son. Note : Vous devez inclure la bibliothèque p5.sound !
+
+**Testez !** Les sons devraient se charger sans erreur. Vérifiez la console si quelque chose ne va pas.
+
+### Étape 3B : Définir le volume initial
+
+**La logique** : Quand les sons sont chargés, vous devriez définir leur volume initial pour qu'ils soient prêts à jouer au bon niveau.
+
+**Pourquoi dans `setup()` ?** Rappelez-vous, `setup()` s'exécute une fois au début. C'est parfait pour définir les valeurs initiales qui ne doivent se produire qu'une seule fois - comme définir le volume de départ. Nous n'avons pas besoin de définir le volume 60 fois par seconde, juste une fois au démarrage du programme !
+
+**Ce que vous devez faire** : Dans `setup()`, après avoir créé le canvas et les boutons, définissez le volume pour les deux pistes. Vous utiliserez la valeur de volume stockée dans chaque objet track et l'appliquerez au son.
+
+**Pourquoi ?** Cela garantit que les sons commencent au bon niveau de volume quand ils sont joués pour la première fois.
+
+**Le processus** : Pour chaque piste, prenez la valeur de volume de l'objet track et appliquez-la au son. Cela connecte le réglage de volume à la lecture réelle du son.
+
+**Documentation** : [`.setVolume()`](https://p5js.org/reference/#/p5.sound/p5.SoundFile/setVolume) définit le volume d'un son.
 
 ---
 
@@ -259,15 +259,17 @@ Les sliders sont des contrôles qui permettent aux utilisateurs d'ajuster une va
 
 ### Étape 4B : Ajouter les labels de volume
 
+**Qu'est-ce qu'un label ?** Un label (ou étiquette en français) est un texte qui explique ce que fait un élément de l'interface. C'est comme une petite note écrite qui dit "ceci contrôle le volume" ou "ce bouton sert à jouer la piste". Dans notre cas, nous voulons ajouter du texte qui dit "Volume" au-dessus de chaque slider pour que les utilisateurs sachent immédiatement ce que contrôlent ces sliders.
+
 **Pourquoi dans `draw()` ?** Les labels sont dessinés sur le canvas, et tout ce qui est dessiné sur le canvas doit être dans `draw()` car `draw()` s'exécute en continu pour rafraîchir l'écran. Si vous dessinez du texte dans `setup()`, il n'apparaîtrait qu'une seule fois et pourrait être recouvert par le fond. Dans `draw()`, les labels sont redessinés à chaque image, donc ils restent toujours visibles.
 
-**La logique** : Les utilisateurs doivent savoir ce que contrôlent les sliders. Ajouter des labels rend l'interface plus claire.
+**La logique** : Les utilisateurs doivent savoir ce que contrôlent les sliders. Ajouter des labels rend l'interface plus claire et plus facile à utiliser. Sans labels, les utilisateurs ne sauraient pas que les sliders contrôlent le volume !
 
-**Ce que vous devez faire** : Dans votre fonction `draw()`, dessinez des labels de texte au-dessus de chaque slider. Les labels devraient dire "Volume" et être positionnés juste au-dessus de chaque slider.
+**Ce que vous devez faire** : Dans votre fonction `draw()`, dessinez du texte au-dessus de chaque slider. Le texte devrait dire "Volume" et être positionné juste au-dessus de chaque slider. Pour dessiner du texte dans p5.js, vous utiliserez la fonction `text()`.
 
-**Le processus** : Réfléchissez à où chaque slider est positionné, puis placez le label légèrement au-dessus. Vous utiliserez la même coordonnée x que le slider, mais une coordonnée y légèrement plus petite (plus haut sur l'écran).
+**Le processus** : Réfléchissez à où chaque slider est positionné, puis placez le texte légèrement au-dessus. Vous utiliserez la même coordonnée x que le slider, mais une coordonnée y légèrement plus petite (plus haut sur l'écran, car les coordonnées y augmentent vers le bas). Pensez-y comme placer une étiquette au-dessus d'un objet - vous voulez qu'elle soit au même endroit horizontalement (x), mais légèrement plus haute (y plus petit).
 
-**Testez !** Vous devriez voir les labels "Volume" au-dessus de chaque slider !
+**Testez !** Vous devriez voir le texte "Volume" au-dessus de chaque slider !
 
 ---
 
@@ -309,9 +311,9 @@ Une bascule change entre deux états. Pour play/pause :
 
 ### Étape 5B : Connecter les boutons à la fonction de bascule
 
-**La logique** : Quand vous créez des boutons avec `createButton()`, vous les connectez à des fonctions en utilisant `.mousePressed()`. Cela gère automatiquement la détection des clics pour vous.
+**La logique** : Maintenant que vous avez créé la fonction de bascule, vous devez remplacer les fonctions `console.log()` que vous avez utilisées dans l'étape 2 par la vraie fonction de bascule. Quand vous créez des boutons avec `createButton()`, vous les connectez à des fonctions en utilisant `.mousePressed()`. Cela gère automatiquement la détection des clics pour vous.
 
-**Ce que vous devez faire** : Lors de la création des boutons dans `setup()`, connectez chaque bouton à la fonction de bascule. Quand un bouton est cliqué, il devrait appeler la fonction de bascule avec l'objet track approprié.
+**Ce que vous devez faire** : Retournez à la partie de votre code où vous avez créé les boutons dans `setup()` (étape 2). Remplacez les fonctions `console.log()` par des appels à la fonction de bascule. Quand un bouton est cliqué, il devrait maintenant appeler la fonction de bascule avec l'objet track approprié au lieu d'afficher simplement un message dans la console.
 
 **Pourquoi cela fonctionne ?** La méthode `.mousePressed()` détecte automatiquement quand le bouton est cliqué et appelle votre fonction. Pas besoin de vérifier manuellement les coordonnées de la souris ! C'est comme si le bouton "savait" quand il a été cliqué.
 

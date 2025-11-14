@@ -54,24 +54,6 @@ Time sliders let DJs jump to any position in a track. Think of it like a video p
 2. What should happen when the slider is moved? (Jump to that position in the track)
 3. How do you calculate which time in the track corresponds to the slider value?
 
-```javascript
-function setupTrackSliders(track) {
-    // Volume slider (existing code)
-    track.slider = createSlider(0, 100, 50);
-    track.slider.position(track.sliderPosition.x, track.sliderPosition.y);
-    
-    // NEW: Time slider
-    track.timeSlider = createSlider(0, 100, 0);
-    track.timeSlider.position(track.timeSliderPosition.x, track.timeSliderPosition.y);
-    track.timeSlider.style('width', '150px');
-    track.timeSlider.input(function() {
-        let soundDuration = track.sound.duration();
-        let targetTime = (track.timeSlider.value() / 100) * soundDuration;
-        track.sound.jump(targetTime);
-    });
-}
-```
-
 **Understanding the code**:
 - `createSlider(0, 100, 0)` creates a slider from 0% to 100%, starting at 0%
 - `.input()` runs when the slider is moved
@@ -85,22 +67,10 @@ function setupTrackSliders(track) {
 
 ### Step 1C: Updating Time Slider Positions
 
-**Your Task**: Update your `updatePositions()` function to calculate time slider positions:
-
-```javascript
-function updatePositions() {
-    // ... existing code ...
-    let timeSliderY = height * 0.55;    // Duration sliders
-    
-    // Track 1
-    track1.timeSliderPosition.x = leftX;
-    track1.timeSliderPosition.y = timeSliderY;
-    
-    // Track 2
-    track2.timeSliderPosition.x = rightX;
-    track2.timeSliderPosition.y = timeSliderY;
-}
-```
+**Your Task**: Update your `updatePositions()` function to calculate time slider positions. Think about:
+1. Where should the time sliders be positioned? (Below the volume sliders)
+2. How do you calculate the Y position? (Use a percentage of height, like `height * 0.55`)
+3. How do you update both track1 and track2 time slider positions?
 
 ### Step 1D: Updating Time Sliders During Playback
 
@@ -109,19 +79,11 @@ function updatePositions() {
 2. How do you convert that to a slider value? (Percentage: 0-100)
 3. When should this update happen? (Continuously, in the draw loop)
 
-```javascript
-function updateTimeSliders() {
-    updateTimeSlider(track1);
-    updateTimeSlider(track2);
-}
-
-function updateTimeSlider(track) {
-    let currentTime = track.sound.currentTime();
-    let soundDuration = track.sound.duration();
-    let progress = (currentTime / soundDuration) * 100;
-    track.timeSlider.value(progress);
-}
-```
+Create a function `updateTimeSliders()` that updates time sliders for both tracks, and a helper function `updateTimeSlider(track)` that:
+- Gets the current time in the track
+- Gets the total duration of the sound
+- Calculates progress as a percentage (0-100)
+- Updates the slider value to show the current position
 
 Then call `updateTimeSliders()` in your `draw()` function.
 
@@ -147,16 +109,6 @@ Instead of showing raw seconds, we'll display time as "MM:SS" (minutes:seconds),
 2. How do you ensure each number always has 2 digits? (e.g., "05" instead of "5")
 3. How do you combine minutes and seconds with a colon?
 
-```javascript
-function formatTime(seconds) {
-    let minutes = Math.floor(seconds / 60);
-    let secs = Math.floor(seconds % 60);
-    let minutesStr = String(minutes).padStart(2, '0');
-    let secsStr = String(secs).padStart(2, '0');
-    return minutesStr + ":" + secsStr;
-}
-```
-
 **Understanding the code**:
 - `Math.floor(seconds / 60)` gets minutes (whole number)
 - `Math.floor(seconds % 60)` gets remaining seconds
@@ -167,20 +119,11 @@ function formatTime(seconds) {
 
 ### Step 2B: Displaying Time
 
-**Your Task**: Create a function to display time for each track:
-
-```javascript
-function drawTimeDisplay(track) {
-    let elapsed = track.sound.currentTime();
-    let total = track.sound.duration();
-    let timeText = formatTime(elapsed) + " / " + formatTime(total);
-    
-    fill(0);
-    textAlign(CENTER);
-    textSize(12);
-    text(timeText, track.timeSliderPosition.x, track.timeSliderPosition.y + 35);
-}
-```
+**Your Task**: Create a function to display time for each track. Think about:
+1. How do you get the elapsed time and total duration?
+2. How do you format them using the `formatTime()` function?
+3. How do you combine them with " / " between them?
+4. Where should the text be displayed? (Below the time slider)
 
 Then call `drawTimeDisplay(track1)` and `drawTimeDisplay(track2)` in your `draw()` function.
 
@@ -204,15 +147,10 @@ A crossfader smoothly transitions between two tracks. At 0%, only track 1 is hea
 
 ### Step 3B: Creating the Crossfader Slider
 
-**Your Task**: Create a function to set up the crossfader:
-
-```javascript
-function setupCrossfader() {
-    crossfader = createSlider(0, 100, 50);
-    crossfader.position(width/2 - 100, height * 0.75);
-    crossfader.style('width', '200px');
-}
-```
+**Your Task**: Create a function to set up the crossfader. Think about:
+1. What range should the slider have? (0-100, starting at 50)
+2. Where should it be positioned? (Center of the screen)
+3. How wide should it be? (e.g., 200px)
 
 Then call `setupCrossfader()` in your `setup()` function.
 
@@ -225,19 +163,6 @@ Then call `setupCrossfader()` in your `setup()` function.
 2. How does `cos()` behave? (1.0 at 0°, 0.0 at 90° - perfect for track 1 fading out)
 3. How does `sin()` behave? (0.0 at 0°, 1.0 at 90° - perfect for track 2 fading in)
 4. How do you combine this with each track's individual volume setting?
-
-```javascript
-function applyCrossfader() {
-    crossfaderValue = crossfader.value();
-    let angle = (crossfaderValue / 100) * (PI / 2);
-    
-    let track1CrossfadeVolume = track1.volume * cos(angle);
-    let track2CrossfadeVolume = track2.volume * sin(angle);
-    
-    track1.sound.setVolume(track1CrossfadeVolume);
-    track2.sound.setVolume(track2CrossfadeVolume);
-}
-```
 
 Then call `applyCrossfader()` in your `draw()` function.
 
@@ -275,17 +200,6 @@ BPM (Beats Per Minute) visualization shows the rhythm of the music through pulsa
 2. How many analyzers do you need? (One for each track)
 3. How do you connect them to the sounds? (So they can analyze the audio)
 
-```javascript
-amp1 = new p5.Amplitude();
-amp2 = new p5.Amplitude();
-```
-
-Then connect them to the sounds:
-```javascript
-amp1.setInput(track1.sound);
-amp2.setInput(track2.sound);
-```
-
 **Documentation**: [`p5.Amplitude`](https://p5js.org/reference/#/p5.Amplitude) analyzes audio amplitude.
 
 ### Step 4B: Adding Pulse Size Properties
@@ -302,35 +216,14 @@ amp2.setInput(track2.sound);
 3. Where should the circles be displayed? (Center of the screen, side by side)
 4. How do you draw a circle that pulses? (Update the size based on amplitude each frame)
 
-```javascript
-function drawBPMVisualization() {
-    track1.pulseSize = getPulseSize(track1, amp1);
-    track2.pulseSize = getPulseSize(track2, amp2);
-    
-    let centerX = width / 2;
-    let beatVisualY = height * 0.3;
-    
-    drawBeatCircle(centerX - 60, beatVisualY, track1.pulseSize, [255, 0, 0], "beat visual 1");
-    drawBeatCircle(centerX + 60, beatVisualY, track2.pulseSize, [0, 0, 255], "beat visual 2");
-}
+Create a function `drawBPMVisualization()` that:
+- Calculates pulse size for each track
+- Determines where to display circles (center of screen, side by side)
+- Draws pulsating circles for each track
 
-function getPulseSize(track, amp) {
-    let level = (track.sound && amp) ? amp.getLevel() : 0;
-    return Math.max(80, 80 + (level * 400));
-}
-
-function drawBeatCircle(x, y, size, color, label) {
-    noFill();
-    stroke(color[0], color[1], color[2], 150);
-    strokeWeight(3);
-    circle(x, y, size);
-    
-    fill(0);
-    textAlign(CENTER);
-    textSize(12);
-    text(label, x, y + size/2 + 15);
-}
-```
+Create helper functions:
+- `getPulseSize(track, amp)` - gets amplitude level and calculates circle size (minimum size + amplification based on amplitude)
+- `drawBeatCircle(x, y, size, color, label)` - draws a circle at specified position and size, adds label below
 
 Then call `drawBPMVisualization()` in your `draw()` function.
 
@@ -349,20 +242,15 @@ Then call `drawBPMVisualization()` in your `draw()` function.
 
 ### Step 5A: Adding Duration Labels
 
-**Your Task**: In your `drawLabels()` function, add labels for the time sliders:
-
-```javascript
-text("duration", track1.timeSliderPosition.x, track1.timeSliderPosition.y - 15);
-text("duration", track2.timeSliderPosition.x, track2.timeSliderPosition.y - 15);
-```
+**Your Task**: In your `drawLabels()` function, add labels for the time sliders. Think about:
+1. What text should the labels say? ("duration")
+2. Where should they be positioned? (Just above each time slider)
 
 ### Step 5B: Adding Crossfader Label
 
-**Your Task**: Add a label for the crossfader:
-
-```javascript
-text("crossfader", width/2, height * 0.72);
-```
+**Your Task**: Add a label for the crossfader. Think about:
+1. What text should it say? ("crossfader")
+2. Where should it be positioned? (Above the crossfader slider)
 
 ### Step 5C: Updating Layout
 
