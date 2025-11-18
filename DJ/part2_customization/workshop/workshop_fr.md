@@ -41,7 +41,7 @@ Dans p5.js, vous utilisez `createFileInput()` pour créer un bouton de télécha
 
 **Concept visuel** : ![Diagramme montrant le flux de téléchargement de fichier - bouton → sélection de fichier → chargement de fichier → utilisation dans le programme](img/file_upload.svg)
 
-**Documentation** : [`createFileInput()`](https://p5js.org/reference/#/p5/createFileInput) crée un bouton de téléchargement de fichier.
+**Documentation** : [`createFileInput()`](https://p5js.org/reference/p5/createFileInput) crée un bouton de téléchargement de fichier.
 
 ---
 
@@ -86,9 +86,9 @@ Puis dans `setup()`, appelez `setupFileInputs()` après avoir créé le canvas.
 
 
 **Documentation** :
-- [`createFileInput()`](https://p5js.org/reference/#/p5/createFileInput)
-- [`.position()`](https://p5js.org/reference/#/p5.Element/position)
-- [`.attribute()`](https://p5js.org/reference/#/p5.Element/attribute)
+- [`createFileInput()`](https://p5js.org/reference/p5/createFileInput)
+- [`.position()`](https://p5js.org/reference/p5.Element/position)
+- [`.attribute()`](https://p5js.org/reference/p5.Element/attribute)
 
 ### Étape 2C : Créer la fonction de gestion
 
@@ -105,7 +105,7 @@ Puis dans `setup()`, appelez `setupFileInputs()` après avoir créé le canvas.
 - `file.data` contient les données du fichier que p5.js peut utiliser
 - `loadImage()` charge une image depuis les données du fichier
 
-**Documentation** : [`loadImage()`](https://p5js.org/reference/#/p5/loadImage) charge les fichiers image.
+**Documentation** : [`loadImage()`](https://p5js.org/reference/p5/loadImage) charge les fichiers image.
 
 **Testez !** Essayez de télécharger une image - vous devriez voir le bouton de saisie de fichier, mais l'image ne s'affichera pas encore (nous l'ajouterons ensuite).
 
@@ -126,7 +126,7 @@ Puis dans votre fonction `draw()`, appelez `drawBackground()` au début.
 - `width` et `height` la font remplir la taille du canvas
 
 
-**Documentation** : [`image()`](https://p5js.org/reference/#/p5/image) dessine les images.
+**Documentation** : [`image()`](https://p5js.org/reference/p5/image) dessine les images.
 
 **Testez !** Téléchargez une image - elle devrait maintenant apparaître comme fond !
 
@@ -189,7 +189,7 @@ Créez aussi les fonctions helper :
 - `loadSound(file.data)` charge le nouveau son depuis le fichier
 - Nous définissons le volume pour qu'il soit prêt à jouer
 
-**Documentation** : [`loadSound()`](https://p5js.org/reference/#/p5.sound/p5.SoundFile) charge les fichiers son.
+**Documentation** : [`loadSound()`](https://p5js.org/reference/p5.sound/p5.SoundFile) charge les fichiers son.
 
 **Testez !** Téléchargez un fichier audio pour la piste 1 - il devrait remplacer le son par défaut !
 
@@ -290,7 +290,7 @@ Votre table de mixage DJ devrait fonctionner sur les appareils mobiles ! Cela si
 - `windowWidth` et `windowHeight` sont des variables p5.js qui vous donnent la taille de la fenêtre du navigateur
 - Cela fait que votre canvas remplit tout l'écran sur n'importe quel appareil
 
-**Documentation** : [`windowWidth`](https://p5js.org/reference/#/p5/windowWidth) et [`windowHeight`](https://p5js.org/reference/#/p5/windowHeight) vous donnent les dimensions de la fenêtre.
+**Documentation** : [`windowWidth`](https://p5js.org/reference/p5/windowWidth) et [`windowHeight`](https://p5js.org/reference/p5/windowHeight) vous donnent les dimensions de la fenêtre.
 
 ### Étape 7B : Rendre les positions responsive
 
@@ -327,7 +327,7 @@ Puis dans `setup()`, appelez `setupTrackButton(track1)` et `setupTrackButton(tra
 - `.touchStarted()` est comme `.mousePressed()` mais pour les écrans tactiles
 - Cela fait fonctionner les boutons sur les appareils mobiles
 
-**Documentation** : [`.touchStarted()`](https://p5js.org/reference/#/p5.Element/touchStarted) gère les événements tactiles.
+**Documentation** : [`.touchStarted()`](https://p5js.org/reference/p5.Element/touchStarted) gère les événements tactiles.
 
 **Testez !** Sur un appareil mobile, vous devriez pouvoir appuyer sur les boutons pour play/pause !
 
@@ -347,7 +347,7 @@ Créez aussi `updateTrackPositions(track)` qui met à jour les positions du bout
 - `windowResized()` s'exécute automatiquement quand la taille de la fenêtre change
 - Cela garde tout positionné correctement après rotation ou redimensionnement
 
-**Documentation** : [`windowResized()`](https://p5js.org/reference/#/p5/windowResized) gère les événements de redimensionnement de fenêtre.
+**Documentation** : [`windowResized()`](https://p5js.org/reference/p5/windowResized) gère les événements de redimensionnement de fenêtre.
 
 **Testez !** Tournez votre téléphone ou redimensionnez le navigateur - tout devrait rester à la bonne place !
 

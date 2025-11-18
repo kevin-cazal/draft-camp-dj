@@ -78,10 +78,10 @@ bgFileInput.attribute('accept', 'image/*');
 ```
 
 **Comprendre le code** :
-- [`createFileInput(handleBackgroundImage)`](https://p5js.org/reference/#/p5/createFileInput) crée un bouton de téléchargement de fichier
+- [`createFileInput(handleBackgroundImage)`](https://p5js.org/reference/p5/createFileInput) crée un bouton de téléchargement de fichier
   - `handleBackgroundImage` est le nom de la fonction qui s'exécutera quand un fichier est sélectionné
-- [`position(10, 10)`](https://p5js.org/reference/#/p5.Element/position) place le bouton aux coordonnées (10, 10) - en haut à gauche
-- [`attribute('accept', 'image/*')`](https://p5js.org/reference/#/p5.Element/attribute) restreint la sélection de fichiers aux images uniquement
+- [`position(10, 10)`](https://p5js.org/reference/p5.Element/position) place le bouton aux coordonnées (10, 10) - en haut à gauche
+- [`attribute('accept', 'image/*')`](https://p5js.org/reference/p5.Element/attribute) restreint la sélection de fichiers aux images uniquement
   - `'image/*'` signifie "n'importe quel type d'image" (JPG, PNG, GIF, etc.)
 
 
@@ -105,7 +105,7 @@ function handleBackgroundImage(file) {
 - `if (file.type === 'image')` - vérifiez si le fichier est une image
   - `file.type` vous indique quel type de fichier c'est
 - `bgImage = loadImage(file.data)` - chargez l'image depuis le fichier
-  - [`loadImage()`](https://p5js.org/reference/#/p5/loadImage) charge un fichier image
+  - [`loadImage()`](https://p5js.org/reference/p5/loadImage) charge un fichier image
   - `file.data` contient les données du fichier que p5.js peut utiliser
 
 **Pourquoi vérifier le type de fichier ?** Les utilisateurs pourraient accidentellement sélectionner le mauvais type de fichier. Cette vérification empêche les erreurs.
@@ -130,7 +130,7 @@ if (bgImage) {
 - `if (bgImage)` - vérifiez si une image a été téléchargée
   - Si `bgImage` n'est pas `null`, cette condition est vraie
 - `image(bgImage, 0, 0, width, height)` - dessinez l'image
-  - [`image()`](https://p5js.org/reference/#/p5/image) dessine une image
+  - [`image()`](https://p5js.org/reference/p5/image) dessine une image
   - `bgImage` est l'image à dessiner
   - `0, 0` est la position (coin supérieur gauche)
   - `width, height` la fait remplir tout le canvas
@@ -234,7 +234,7 @@ function handleSoundUpload(file, track) {
   - `track.isPlaying = false` - mettez à jour l'état de lecture
   - `track.button.html(track.buttonLabel + " ▶")` - réinitialisez le label du bouton
 - `track.sound = loadSound(file.data)` - chargez le nouveau son
-  - [`loadSound()`](https://p5js.org/reference/#/p5.sound/p5.SoundFile) charge les fichiers son
+  - [`loadSound()`](https://p5js.org/reference/p5.sound/p5.SoundFile) charge les fichiers son
   - `file.data` contient les données du fichier
 - `track.sound.setVolume(track.volume)` - définissez le volume pour qu'il soit prêt à jouer
 
@@ -488,7 +488,7 @@ function setup() {
 ```
 
 **Comprendre le code** :
-- [`windowWidth`](https://p5js.org/reference/#/p5/windowWidth) et [`windowHeight`](https://p5js.org/reference/#/p5/windowHeight) sont des variables p5.js qui vous donnent la taille de la fenêtre du navigateur
+- [`windowWidth`](https://p5js.org/reference/p5/windowWidth) et [`windowHeight`](https://p5js.org/reference/p5/windowHeight) sont des variables p5.js qui vous donnent la taille de la fenêtre du navigateur
 - Cela fait que votre canvas remplit tout l'écran sur n'importe quel appareil
 
 ### Étape 7 (B) : Rendre les positions responsive
@@ -540,7 +540,7 @@ track1.button.touchStarted(function() {
 ```
 
 **Comprendre le code** :
-- [`.touchStarted()`](https://p5js.org/reference/#/p5.Element/touchStarted) gère les événements tactiles sur les appareils mobiles
+- [`.touchStarted()`](https://p5js.org/reference/p5.Element/touchStarted) gère les événements tactiles sur les appareils mobiles
 - Fonctionne de la même manière que `.mousePressed()` mais pour les écrans tactiles
 
 ### Étape 7 (D) : Gérer le redimensionnement de la fenêtre
@@ -562,7 +562,7 @@ function windowResized() {
 ```
 
 **Comprendre le code** :
-- [`windowResized()`](https://p5js.org/reference/#/p5/windowResized) s'exécute automatiquement quand la taille de la fenêtre change
+- [`windowResized()`](https://p5js.org/reference/p5/windowResized) s'exécute automatiquement quand la taille de la fenêtre change
 - Met à jour la taille du canvas et recalcule toutes les positions
 - Garde tout positionné correctement après rotation ou redimensionnement
 

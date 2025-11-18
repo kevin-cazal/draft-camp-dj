@@ -42,7 +42,7 @@ In p5.js, you use `createFileInput()` to make a file upload button. When a user 
 
 **Visual Concept**: ![Diagram showing file upload flow - button → file selection → file loading → use in program](img/file_upload.svg)
 
-**Documentation**: [`createFileInput()`](https://p5js.org/reference/#/p5/createFileInput) creates a file upload button.
+**Documentation**: [`createFileInput()`](https://p5js.org/reference/p5/createFileInput) creates a file upload button.
 
 ---
 
@@ -86,9 +86,9 @@ You want users to be able to upload their own background image. This replaces th
 
 
 **Documentation**: 
-- [`createFileInput()`](https://p5js.org/reference/#/p5/createFileInput)
-- [`.position()`](https://p5js.org/reference/#/p5.Element/position)
-- [`.attribute()`](https://p5js.org/reference/#/p5.Element/attribute)
+- [`createFileInput()`](https://p5js.org/reference/p5/createFileInput)
+- [`.position()`](https://p5js.org/reference/p5.Element/position)
+- [`.attribute()`](https://p5js.org/reference/p5.Element/attribute)
 
 ### Step 2C: Creating the Handler Function
 
@@ -106,7 +106,7 @@ You want users to be able to upload their own background image. This replaces th
 - `file.data` contains the file data that p5.js can use
 - `loadImage()` loads an image from the file data
 
-**Documentation**: [`loadImage()`](https://p5js.org/reference/#/p5/loadImage) loads image files.
+**Documentation**: [`loadImage()`](https://p5js.org/reference/p5/loadImage) loads image files.
 
 **Test it!** Try uploading an image - you should see the file input button, but the image won't display yet (we'll add that next).
 
@@ -127,7 +127,7 @@ You want users to be able to upload their own background image. This replaces th
 - `width` and `height` make it fill the canvas size
 
 
-**Documentation**: [`image()`](https://p5js.org/reference/#/p5/image) draws images.
+**Documentation**: [`image()`](https://p5js.org/reference/p5/image) draws images.
 
 **Test it!** Upload an image - it should now appear as the background!
 
@@ -196,7 +196,7 @@ Now you want users to upload their own sounds for each track. This is similar to
 - Reset the button: `track.button.html(track.buttonLabel + " ▶")`
 - Set `track.isPlaying = false`
 
-**Documentation**: [`loadSound()`](https://p5js.org/reference/#/p5.sound/p5.SoundFile) loads sound files.
+**Documentation**: [`loadSound()`](https://p5js.org/reference/p5.sound/p5.SoundFile) loads sound files.
 
 **Test it!** Upload an audio file for track 1 - it should replace the default sound!
 
@@ -302,7 +302,7 @@ Your DJ deck should work on mobile devices! This means:
 - `windowWidth` and `windowHeight` are p5.js variables that give you the browser window size
 - This makes your canvas fill the entire screen on any device
 
-**Documentation**: [`windowWidth`](https://p5js.org/reference/#/p5/windowWidth) and [`windowHeight`](https://p5js.org/reference/#/p5/windowHeight) give you the window dimensions.
+**Documentation**: [`windowWidth`](https://p5js.org/reference/p5/windowWidth) and [`windowHeight`](https://p5js.org/reference/p5/windowHeight) give you the window dimensions.
 
 ### Step 7B: Making Positions Responsive
 
@@ -340,7 +340,7 @@ Your DJ deck should work on mobile devices! This means:
 - `.touchStarted()` is like `.mousePressed()` but for touch screens
 - This makes buttons work on mobile devices
 
-**Documentation**: [`.touchStarted()`](https://p5js.org/reference/#/p5.Element/touchStarted) handles touch events.
+**Documentation**: [`.touchStarted()`](https://p5js.org/reference/p5.Element/touchStarted) handles touch events.
 
 **Test it!** On a mobile device, you should be able to tap the buttons to play/pause!
 
@@ -359,7 +359,7 @@ Your DJ deck should work on mobile devices! This means:
 - `windowResized()` runs automatically when the window size changes
 - This keeps everything positioned correctly after rotation or resize
 
-**Documentation**: [`windowResized()`](https://p5js.org/reference/#/p5/windowResized) handles window resize events.
+**Documentation**: [`windowResized()`](https://p5js.org/reference/p5/windowResized) handles window resize events.
 
 **Test it!** Rotate your phone or resize the browser - everything should stay in the right place!
 

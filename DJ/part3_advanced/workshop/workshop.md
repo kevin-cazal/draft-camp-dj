@@ -61,9 +61,9 @@ Time sliders let DJs jump to any position in a track. Think of it like a video p
 - `track.sound.jump(targetTime)` jumps to a specific time in the sound
 
 **Documentation**: 
-- [`sound.duration()`](https://p5js.org/reference/#/p5.SoundFile/duration) gets the total duration
-- [`sound.jump()`](https://p5js.org/reference/#/p5.SoundFile/jump) jumps to a specific time
-- [`sound.currentTime()`](https://p5js.org/reference/#/p5.SoundFile/currentTime) gets the current playback time
+- [`sound.duration()`](https://p5js.org/reference/p5.SoundFile/duration) gets the total duration
+- [`sound.jump()`](https://p5js.org/reference/p5.SoundFile/jump) jumps to a specific time
+- [`sound.currentTime()`](https://p5js.org/reference/p5.SoundFile/currentTime) gets the current playback time
 
 ### Step 1C: Updating Time Slider Positions
 
@@ -175,7 +175,7 @@ Then call `applyCrossfader()` in your `draw()` function.
 **Why trigonometry?** It creates smooth, natural-sounding transitions instead of abrupt changes!
 
 **Documentation**: 
-- [`cos()`](https://p5js.org/reference/#/p5/cos) and [`sin()`](https://p5js.org/reference/#/p5/sin) for smooth curves
+- [`cos()`](https://p5js.org/reference/p5/cos) and [`sin()`](https://p5js.org/reference/p5/sin) for smooth curves
 
 **Test it!** Move the crossfader - track 1 should fade out as track 2 fades in!
 
@@ -200,7 +200,7 @@ BPM (Beats Per Minute) visualization shows the rhythm of the music through pulsa
 2. How many analyzers do you need? (One for each track)
 3. How do you connect them to the sounds? (So they can analyze the audio)
 
-**Documentation**: [`p5.Amplitude`](https://p5js.org/reference/#/p5.Amplitude) analyzes audio amplitude.
+**Documentation**: [`p5.Amplitude`](https://p5js.org/reference/p5.Amplitude) analyzes audio amplitude.
 
 ### Step 4B: Adding Pulse Size Properties
 

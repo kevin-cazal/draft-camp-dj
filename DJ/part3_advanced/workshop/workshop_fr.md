@@ -77,9 +77,9 @@ function setupTrackSliders(track) {
 - `track.sound.jump(targetTime)` saute à un temps spécifique dans le son
 
 **Documentation** :
-- [`sound.duration()`](https://p5js.org/reference/#/p5.SoundFile/duration) obtient la durée totale
-- [`sound.jump()`](https://p5js.org/reference/#/p5.SoundFile/jump) saute à un temps spécifique
-- [`sound.currentTime()`](https://p5js.org/reference/#/p5.SoundFile/currentTime) obtient le temps de lecture actuel
+- [`sound.duration()`](https://p5js.org/reference/p5.SoundFile/duration) obtient la durée totale
+- [`sound.jump()`](https://p5js.org/reference/p5.SoundFile/jump) saute à un temps spécifique
+- [`sound.currentTime()`](https://p5js.org/reference/p5.SoundFile/currentTime) obtient le temps de lecture actuel
 
 ### Étape 1C : Mettre à jour les positions des sliders de temps
 
@@ -238,7 +238,7 @@ Puis appelez `applyCrossfader()` dans votre fonction `draw()`.
 **Pourquoi la trigonométrie ?** Elle crée des transitions fluides et naturelles au lieu de changements brusques !
 
 **Documentation** :
-- [`cos()`](https://p5js.org/reference/#/p5/cos) et [`sin()`](https://p5js.org/reference/#/p5/sin) pour des courbes fluides
+- [`cos()`](https://p5js.org/reference/p5/cos) et [`sin()`](https://p5js.org/reference/p5/sin) pour des courbes fluides
 
 **Testez !** Déplacez le crossfader - la piste 1 devrait s'estomper pendant que la piste 2 s'intensifie !
 
@@ -271,7 +271,7 @@ amp1.setInput(track1.sound);
 amp2.setInput(track2.sound);
 ```
 
-**Documentation** : [`p5.Amplitude`](https://p5js.org/reference/#/p5.Amplitude) analyse l'amplitude audio.
+**Documentation** : [`p5.Amplitude`](https://p5js.org/reference/p5.Amplitude) analyse l'amplitude audio.
 
 ### Étape 4B : Ajouter les propriétés de taille de pulsation
 

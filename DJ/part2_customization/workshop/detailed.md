@@ -78,10 +78,10 @@ bgFileInput.attribute('accept', 'image/*');
 ```
 
 **Understanding the code**:
-- [`createFileInput(handleBackgroundImage)`](https://p5js.org/reference/#/p5/createFileInput) creates a file upload button
+- [`createFileInput(handleBackgroundImage)`](https://p5js.org/reference/p5/createFileInput) creates a file upload button
   - `handleBackgroundImage` is the name of the function that will run when a file is selected
-- [`position(10, 10)`](https://p5js.org/reference/#/p5.Element/position) places the button at coordinates (10, 10) - top left
-- [`attribute('accept', 'image/*')`](https://p5js.org/reference/#/p5.Element/attribute) restricts file selection to images only
+- [`position(10, 10)`](https://p5js.org/reference/p5.Element/position) places the button at coordinates (10, 10) - top left
+- [`attribute('accept', 'image/*')`](https://p5js.org/reference/p5.Element/attribute) restricts file selection to images only
   - `'image/*'` means "any image type" (JPG, PNG, GIF, etc.)
 
 
@@ -105,7 +105,7 @@ function handleBackgroundImage(file) {
 - `if (file.type === 'image')` - check if the file is an image
   - `file.type` tells you what kind of file it is
 - `bgImage = loadImage(file.data)` - load the image from the file
-  - [`loadImage()`](https://p5js.org/reference/#/p5/loadImage) loads an image file
+  - [`loadImage()`](https://p5js.org/reference/p5/loadImage) loads an image file
   - `file.data` contains the file data that p5.js can use
 
 **Why check file type?** Users might accidentally select the wrong type of file. This check prevents errors.
@@ -130,7 +130,7 @@ if (bgImage) {
 - `if (bgImage)` - check if an image has been uploaded
   - If `bgImage` is not `null`, this condition is true
 - `image(bgImage, 0, 0, width, height)` - draw the image
-  - [`image()`](https://p5js.org/reference/#/p5/image) draws an image
+  - [`image()`](https://p5js.org/reference/p5/image) draws an image
   - `bgImage` is the image to draw
   - `0, 0` is the position (top left corner)
   - `width, height` makes it fill the entire canvas
@@ -234,7 +234,7 @@ function handleSoundUpload(file, track) {
   - `track.isPlaying = false` - update the playing state
   - `track.button.html(track.buttonLabel + " ▶")` - reset the button label
 - `track.sound = loadSound(file.data)` - load the new sound
-  - [`loadSound()`](https://p5js.org/reference/#/p5.sound/p5.SoundFile) loads sound files
+  - [`loadSound()`](https://p5js.org/reference/p5.sound/p5.SoundFile) loads sound files
   - `file.data` contains the file data
 - `track.sound.setVolume(track.volume)` - set the volume so it's ready to play
 
@@ -488,7 +488,7 @@ function setup() {
 ```
 
 **Understanding the code**:
-- [`windowWidth`](https://p5js.org/reference/#/p5/windowWidth) and [`windowHeight`](https://p5js.org/reference/#/p5/windowHeight) are p5.js variables that give you the browser window size
+- [`windowWidth`](https://p5js.org/reference/p5/windowWidth) and [`windowHeight`](https://p5js.org/reference/p5/windowHeight) are p5.js variables that give you the browser window size
 - This makes your canvas fill the entire screen on any device
 
 ### Step 7 (B): Making Positions Responsive
@@ -540,7 +540,7 @@ track1.button.touchStarted(function() {
 ```
 
 **Understanding the code**:
-- [`.touchStarted()`](https://p5js.org/reference/#/p5.Element/touchStarted) handles touch events on mobile devices
+- [`.touchStarted()`](https://p5js.org/reference/p5.Element/touchStarted) handles touch events on mobile devices
 - Works the same as `.mousePressed()` but for touch screens
 
 ### Step 7 (D): Handling Window Resize
@@ -562,7 +562,7 @@ function windowResized() {
 ```
 
 **Understanding the code**:
-- [`windowResized()`](https://p5js.org/reference/#/p5/windowResized) runs automatically when the window size changes
+- [`windowResized()`](https://p5js.org/reference/p5/windowResized) runs automatically when the window size changes
 - Updates canvas size and recalculates all positions
 - Keeps everything positioned correctly after rotation or resize
 

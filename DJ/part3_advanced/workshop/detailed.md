@@ -99,9 +99,9 @@ function setupTrackSliders(track) {
   - `track.sound.jump(targetTime)` - jumps to that time in the sound
 
 **Documentation**: 
-- [`sound.duration()`](https://p5js.org/reference/#/p5.SoundFile/duration) gets the total duration
-- [`sound.jump()`](https://p5js.org/reference/#/p5.SoundFile/jump) jumps to a specific time
-- [`sound.currentTime()`](https://p5js.org/reference/#/p5.SoundFile/currentTime) gets current playback time
+- [`sound.duration()`](https://p5js.org/reference/p5.SoundFile/duration) gets the total duration
+- [`sound.jump()`](https://p5js.org/reference/p5.SoundFile/jump) jumps to a specific time
+- [`sound.currentTime()`](https://p5js.org/reference/p5.SoundFile/currentTime) gets current playback time
 
 **Visual Concept**: [SCHEMA PLACEHOLDER: Diagram showing time slider with 0% at start, 100% at end, and jumping to middle]
 
@@ -374,7 +374,7 @@ function draw() {
 **Visual Concept**: [SCHEMA PLACEHOLDER: Diagram showing crossfade curves - track1 fades from 1.0 to 0.0, track2 fades from 0.0 to 1.0]
 
 **Documentation**: 
-- [`cos()`](https://p5js.org/reference/#/p5/cos) and [`sin()`](https://p5js.org/reference/#/p5/sin) for smooth curves
+- [`cos()`](https://p5js.org/reference/p5/cos) and [`sin()`](https://p5js.org/reference/p5/sin) for smooth curves
 - `PI` is a p5.js constant (3.14159...)
 
 **Test it!** Move the crossfader:
@@ -424,7 +424,7 @@ function setup() {
 - `amp.setInput(sound)` - connects the analyzer to a sound
 - The analyzer reads the raw audio signal (before volume processing)
 
-**Documentation**: [`p5.Amplitude`](https://p5js.org/reference/#/p5.Amplitude) analyzes audio amplitude.
+**Documentation**: [`p5.Amplitude`](https://p5js.org/reference/p5.Amplitude) analyzes audio amplitude.
 
 ### Step 4 (B): Adding Pulse Size Properties
 
@@ -510,7 +510,7 @@ function draw() {
 
 **Visual Concept**: [SCHEMA PLACEHOLDER: Diagram showing circles pulsing - small at quiet moments, large at beats]
 
-**Documentation**: [`amp.getLevel()`](https://p5js.org/reference/#/p5.Amplitude/getLevel) gets current amplitude.
+**Documentation**: [`amp.getLevel()`](https://p5js.org/reference/p5.Amplitude/getLevel) gets current amplitude.
 
 **Test it!** Play tracks and watch the circles pulse with the beat! Try setting volume to 0% - the circles should still pulse!
 

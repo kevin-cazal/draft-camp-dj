@@ -149,13 +149,13 @@ function preload() {
 ```
 
 **Comprendre le code** :
-- [`loadSound('assets/sound1.mp3')`](https://p5js.org/reference/#/p5.sound/p5.SoundFile) charge le fichier son
+- [`loadSound('assets/sound1.mp3')`](https://p5js.org/reference/p5.sound/p5.SoundFile) charge le fichier son
 - `track1.sound = ...` stocke le son chargé dans l'objet track1
 - Le chemin `'assets/sound1.mp3'` signifie que le fichier est dans le dossier `assets`
 
 **Organisation des fichiers** : Mettez vos fichiers son dans un dossier `assets` dans votre projet. Formats courants : WAV, MP3, OGG.
 
-**Documentation** : [`loadSound()`](https://p5js.org/reference/#/p5.sound/p5.SoundFile) charge les fichiers son. Note : Vous devez inclure la bibliothèque p5.sound !
+**Documentation** : [`loadSound()`](https://p5js.org/reference/p5.sound/p5.SoundFile) charge les fichiers son. Note : Vous devez inclure la bibliothèque p5.sound !
 
 ### Étape 2 (B) : Définir le volume initial dans setup()
 
@@ -172,7 +172,7 @@ function setup() {
 ```
 
 **Comprendre le code** :
-- [`setVolume()`](https://p5js.org/reference/#/p5.sound/p5.SoundFile/setVolume) définit le volume d'un son
+- [`setVolume()`](https://p5js.org/reference/p5.sound/p5.SoundFile/setVolume) définit le volume d'un son
 - `track1.volume` est 0.5 (50%), donc le son commence à demi-volume
 - Nous faisons cela pour que les sons soient prêts à jouer au bon volume
 
@@ -219,9 +219,9 @@ function setup() {
 ```
 
 **Comprendre le code** :
-- [`createButton(track1.buttonLabel)`](https://p5js.org/reference/#/p5/createButton) crée un bouton avec le texte du label
+- [`createButton(track1.buttonLabel)`](https://p5js.org/reference/p5/createButton) crée un bouton avec le texte du label
 - `track1.button = ...` stocke le bouton dans l'objet track1
-- [`position(x, y)`](https://p5js.org/reference/#/p5.Element/position) place le bouton à l'écran
+- [`position(x, y)`](https://p5js.org/reference/p5.Element/position) place le bouton à l'écran
 - `track1.buttonPosition.x` et `track1.buttonPosition.y` utilisent la position de l'objet track
 
 **Pourquoi utiliser createButton() ?**
@@ -231,7 +231,7 @@ function setup() {
 
 **Concept visuel** : [PLACEHOLDER SCHÉMA : Diagramme montrant la création et le positionnement des boutons]
 
-**Documentation** : [`createButton()`](https://p5js.org/reference/#/p5/createButton) crée un élément bouton.
+**Documentation** : [`createButton()`](https://p5js.org/reference/p5/createButton) crée un élément bouton.
 
 **Testez !** Vous devriez voir deux boutons affichés à l'écran !
 
@@ -284,17 +284,17 @@ function setup() {
 ```
 
 **Comprendre le code** :
-- [`createSlider(0, 100, 50)`](https://p5js.org/reference/#/p5/createSlider) crée un slider
+- [`createSlider(0, 100, 50)`](https://p5js.org/reference/p5/createSlider) crée un slider
   - `0` = valeur minimum
   - `100` = valeur maximum
   - `50` = valeur de départ (50%)
 - `track1.slider = ...` stocke le slider dans l'objet track1
-- [`position(100, 350)`](https://p5js.org/reference/#/p5.Element/position) place le slider à l'écran
+- [`position(100, 350)`](https://p5js.org/reference/p5.Element/position) place le slider à l'écran
 - Positionnez le slider de track2 à (550, 350) pour le placer sous le bouton de track2
 
 **Concept visuel** : [PLACEHOLDER SCHÉMA : Diagramme de mise en page montrant les boutons et sliders positionnés pour chaque piste]
 
-**Documentation** : [`createSlider()`](https://p5js.org/reference/#/p5/createSlider) crée un élément slider.
+**Documentation** : [`createSlider()`](https://p5js.org/reference/p5/createSlider) crée un élément slider.
 
 **Testez !** Vous devriez voir deux sliders à l'écran que vous pouvez faire glisser !
 
@@ -367,21 +367,21 @@ function toggleTrack(track) {
 
 **Comprendre le code** :
 - `function toggleTrack(track)` - prend un objet track en entrée
-- [`track.sound.isPlaying()`](https://p5js.org/reference/#/p5.sound/p5.SoundFile/isPlaying) vérifie si le son est en lecture
+- [`track.sound.isPlaying()`](https://p5js.org/reference/p5.sound/p5.SoundFile/isPlaying) vérifie si le son est en lecture
 - Si en lecture :
-  - [`pause()`](https://p5js.org/reference/#/p5.sound/p5.SoundFile/pause) arrête la lecture
+  - [`pause()`](https://p5js.org/reference/p5.sound/p5.SoundFile/pause) arrête la lecture
   - `track.isPlaying = false` met à jour notre état
 - Si pas en lecture :
-  - [`setVolume(track.volume)`](https://p5js.org/reference/#/p5.sound/p5.SoundFile/setVolume) définit le volume
-  - [`setLoop(true)`](https://p5js.org/reference/#/p5.sound/p5.SoundFile/setLoop) le fait boucler
-  - [`play()`](https://p5js.org/reference/#/p5.sound/p5.SoundFile/play) démarre la lecture
+  - [`setVolume(track.volume)`](https://p5js.org/reference/p5.sound/p5.SoundFile/setVolume) définit le volume
+  - [`setLoop(true)`](https://p5js.org/reference/p5.sound/p5.SoundFile/setLoop) le fait boucler
+  - [`play()`](https://p5js.org/reference/p5.sound/p5.SoundFile/play) démarre la lecture
   - `track.isPlaying = true` met à jour notre état
 
 **Documentation** :
-- [`.isPlaying()`](https://p5js.org/reference/#/p5.sound/p5.SoundFile/isPlaying) vérifie si le son est en lecture
-- [`.pause()`](https://p5js.org/reference/#/p5.sound/p5.SoundFile/pause) met le son en pause
-- [`.play()`](https://p5js.org/reference/#/p5.sound/p5.SoundFile/play) joue le son
-- [`.setLoop()`](https://p5js.org/reference/#/p5.sound/p5.SoundFile/setLoop) fait boucler le son
+- [`.isPlaying()`](https://p5js.org/reference/p5.sound/p5.SoundFile/isPlaying) vérifie si le son est en lecture
+- [`.pause()`](https://p5js.org/reference/p5.sound/p5.SoundFile/pause) met le son en pause
+- [`.play()`](https://p5js.org/reference/p5.sound/p5.SoundFile/play) joue le son
+- [`.setLoop()`](https://p5js.org/reference/p5.sound/p5.SoundFile/setLoop) fait boucler le son
 
 ### Étape 5 (B) : Connecter les boutons à la fonction de bascule
 
@@ -410,16 +410,16 @@ function setup() {
 ```
 
 **Comprendre le code** :
-- [`createButton()`](https://p5js.org/reference/#/p5/createButton) crée le bouton
-- [`position()`](https://p5js.org/reference/#/p5.Element/position) le place à l'écran
-- [`.mousePressed(function() { ... })`](https://p5js.org/reference/#/p5.Element/mousePressed) connecte une fonction aux clics de bouton
+- [`createButton()`](https://p5js.org/reference/p5/createButton) crée le bouton
+- [`position()`](https://p5js.org/reference/p5.Element/position) le place à l'écran
+- [`.mousePressed(function() { ... })`](https://p5js.org/reference/p5.Element/mousePressed) connecte une fonction aux clics de bouton
 - Quand le bouton est cliqué, il appelle automatiquement `toggleTrack(track1)` ou `toggleTrack(track2)`
 
 **Pourquoi cela fonctionne ?** La méthode `.mousePressed()` détecte automatiquement quand le bouton est cliqué et appelle votre fonction. Pas besoin de vérifier manuellement les coordonnées de la souris !
 
 **Concept visuel** : [PLACEHOLDER SCHÉMA : Diagramme montrant la connexion du bouton avec le callback mousePressed]
 
-**Documentation** : [`.mousePressed()`](https://p5js.org/reference/#/p5.Element/mousePressed) connecte une fonction aux clics de bouton.
+**Documentation** : [`.mousePressed()`](https://p5js.org/reference/p5.Element/mousePressed) connecte une fonction aux clics de bouton.
 
 **Testez !** Cliquez sur les boutons - les sons devraient jouer et se mettre en pause !
 
@@ -462,7 +462,7 @@ function draw() {
 ```
 
 **Comprendre le code** :
-- [`track1.slider.value()`](https://p5js.org/reference/#/p5.Element/value) obtient la valeur actuelle du slider (0-100)
+- [`track1.slider.value()`](https://p5js.org/reference/p5.Element/value) obtient la valeur actuelle du slider (0-100)
 - Diviser par 100 le convertit en 0.0-1.0 (donc 50 devient 0.5)
 - `track1.volume = ...` stocke le volume mis à jour
 - Cela s'exécute à chaque frame, donc le volume se met à jour en temps réel

@@ -99,9 +99,9 @@ function setupTrackSliders(track) {
   - `track.sound.jump(targetTime)` - saute à ce temps dans le son
 
 **Documentation** :
-- [`sound.duration()`](https://p5js.org/reference/#/p5.SoundFile/duration) obtient la durée totale
-- [`sound.jump()`](https://p5js.org/reference/#/p5.SoundFile/jump) saute à un temps spécifique
-- [`sound.currentTime()`](https://p5js.org/reference/#/p5.SoundFile/currentTime) obtient le temps de lecture actuel
+- [`sound.duration()`](https://p5js.org/reference/p5.SoundFile/duration) obtient la durée totale
+- [`sound.jump()`](https://p5js.org/reference/p5.SoundFile/jump) saute à un temps spécifique
+- [`sound.currentTime()`](https://p5js.org/reference/p5.SoundFile/currentTime) obtient le temps de lecture actuel
 
 **Concept visuel** : [PLACEHOLDER SCHÉMA : Diagramme montrant le slider de temps avec 0% au début, 100% à la fin, et sauter au milieu]
 
@@ -374,7 +374,7 @@ function draw() {
 **Concept visuel** : [PLACEHOLDER SCHÉMA : Diagramme montrant les courbes de crossfade - track1 s'estompe de 1.0 à 0.0, track2 s'intensifie de 0.0 à 1.0]
 
 **Documentation** :
-- [`cos()`](https://p5js.org/reference/#/p5/cos) et [`sin()`](https://p5js.org/reference/#/p5/sin) pour des courbes fluides
+- [`cos()`](https://p5js.org/reference/p5/cos) et [`sin()`](https://p5js.org/reference/p5/sin) pour des courbes fluides
 - `PI` est une constante p5.js (3.14159...)
 
 **Testez !** Déplacez le crossfader :
@@ -424,7 +424,7 @@ function setup() {
 - `amp.setInput(sound)` - connecte l'analyseur à un son
 - L'analyseur lit le signal audio brut (avant le traitement du volume)
 
-**Documentation** : [`p5.Amplitude`](https://p5js.org/reference/#/p5.Amplitude) analyse l'amplitude audio.
+**Documentation** : [`p5.Amplitude`](https://p5js.org/reference/p5.Amplitude) analyse l'amplitude audio.
 
 ### Étape 4 (B) : Ajouter les propriétés de taille de pulsation
 
@@ -510,7 +510,7 @@ function draw() {
 
 **Concept visuel** : [PLACEHOLDER SCHÉMA : Diagramme montrant les cercles pulsant - petits aux moments calmes, grands aux rythmes]
 
-**Documentation** : [`amp.getLevel()`](https://p5js.org/reference/#/p5.Amplitude/getLevel) obtient l'amplitude actuelle.
+**Documentation** : [`amp.getLevel()`](https://p5js.org/reference/p5.Amplitude/getLevel) obtient l'amplitude actuelle.
 
 **Testez !** Jouez des pistes et regardez les cercles pulser avec le rythme ! Essayez de mettre le volume à 0% - les cercles devraient toujours pulser !
 
