@@ -19,13 +19,13 @@ This file contains all PLACEHOLDER references that need illustrations/diagrams f
 **Location**: Step 1B - Creating Your Second Track Object
 - **English**: Layout diagram showing two track buttons side by side
 - **French**: Diagramme de mise en page montrant deux boutons de piste côte à côte
-- **Image**: `img/btn_position.svg`
+- **Image**: `img/obj_to_canvas.svg`
 
 ### 4. Button Creation and Positioning ✅
 **Location**: Step 2 - Creating Buttons
 - **English**: Diagram showing button creation and positioning
 - **French**: Diagramme montrant la création et le positionnement des boutons
-- **Image**: `img/obj_to_canvas.svg`
+- **Image**: `img/btn_position.svg`
 
 ### 5. Buttons and Sliders Layout ✅
 **Location**: Step 4A - Creating Sliders
@@ -82,8 +82,8 @@ This file contains all PLACEHOLDER references that need illustrations/diagrams f
 
 **Completed illustrations:**
 1. ✅ Track Object Concept (`img/object.svg`)
-2. ✅ Two Track Buttons Layout (`img/btn_position.svg`)
-3. ✅ Button Creation and Positioning (`img/obj_to_canvas.svg`)
+2. ✅ Two Track Buttons Layout (`img/obj_to_canvas.svg`)
+3. ✅ Button Creation and Positioning (`img/btn_position.svg`)
 4. ✅ Buttons and Sliders Layout (`img/btn_slider_position.svg`)
 5. ✅ Button Connection with Callback (`img/toggle_logic.svg`)
 6. ✅ Complete Program Flow (`img/program_logic.svg`)

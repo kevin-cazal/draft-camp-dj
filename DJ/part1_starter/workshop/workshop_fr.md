@@ -120,7 +120,7 @@ Un objet est un moyen de regrouper des informations liées ensemble. Au lieu d'a
 
 **Logique de positionnement** : Pour placer les boutons côte à côte, donnez-leur des positions x différentes mais la même position y. Pensez-y comme placer deux objets sur la même étagère - ils sont à la même hauteur (y), mais à des positions horizontales différentes (x).
 
-**Concept visuel** : ![Diagramme de mise en page montrant deux boutons de piste côte à côte](img/btn_position.svg)
+**Concept visuel** : ![Diagramme de mise en page montrant deux boutons de piste côte à côte](img/obj_to_canvas.svg)
 
 **Testez !** Vous ne verrez rien encore, mais vos objets sont créés. Vérifiez la console pour toute erreur.
 
@@ -160,7 +160,7 @@ Les boutons sont des éléments interactifs qui répondent aux clics. Dans p5.js
 
 **La connexion** : Quand vous connectez un bouton à une fonction, vous dites "quand ce bouton est cliqué, exécute cette fonction." Pour l'instant, votre fonction peut simplement afficher un message pour vérifier que le bouton fonctionne.
 
-**Concept visuel** : ![Diagramme montrant la création et le positionnement des boutons](img/obj_to_canvas.svg)
+**Concept visuel** : ![Diagramme montrant la création et le positionnement des boutons](img/btn_position.svg)
 
 **Documentation** : [`createButton()`](https://p5js.org/reference/p5/createButton) crée un élément bouton.
 

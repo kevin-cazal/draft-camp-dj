@@ -111,7 +111,7 @@ An object is a way to group related information together. Instead of having sepa
 
 **Positioning Logic**: To place buttons side by side, give them different x positions but the same y position. Think of it like placing two items on the same shelf - they're at the same height (y), but different horizontal positions (x).
 
-**Visual Concept**: ![Layout diagram showing two track buttons side by side](img/btn_position.svg)
+**Visual Concept**: ![Layout diagram showing two track buttons side by side](img/obj_to_canvas.svg)
 
 **Test it!** You won't see anything yet, but your objects are created. Check the console for any errors.
 
@@ -151,7 +151,7 @@ Buttons are interactive elements that respond to clicks. In p5.js, you can creat
 
 **The connection**: When you connect a button to a function, you're saying "when this button is clicked, run this function." For now, your function can simply display a message to verify that the button works.
 
-**Visual Concept**: ![Diagram showing button creation and positioning](img/obj_to_canvas.svg)
+**Visual Concept**: ![Diagram showing button creation and positioning](img/btn_position.svg)
 
 **Documentation**: [`createButton()`](https://p5js.org/reference/p5/createButton) creates a button element.
 
