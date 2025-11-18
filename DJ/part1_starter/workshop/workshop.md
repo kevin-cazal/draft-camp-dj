@@ -37,7 +37,7 @@ Before we begin, you need a starting point. You need the minimal code to get you
 
 **Understanding Functions**: The code above uses **functions** - these are like recipes that contain instructions. `setup()` and `draw()` are special functions that p5.js calls automatically. We'll create our own functions later in this project!
 
-**Documentation**: Learn more about [`setup()`](https://p5js.org/reference/#/p5/setup) and [`draw()`](https://p5js.org/reference/#/p5/draw) in the p5.js documentation.
+**Documentation**: Learn more about [`setup()`](https://p5js.org/reference/p5/setup) and [`draw()`](https://p5js.org/reference/p5/draw) in the p5.js documentation.
 
 ---
 
@@ -54,11 +54,6 @@ In this project, we're going to use **objects** to organize our code.
 All of this information belongs together because it's all about ONE track. That's why we put it all in ONE object!
 
 **Visual Concept**: [SCHEMA PLACEHOLDER: Diagram showing a Track object with all its properties: sound, volume, isPlaying, button, slider]
-
-Think of it like a recipe card:
-- **Object** = the recipe card
-- **Properties** = the ingredients and instructions on the card
-- Each track is a separate recipe card with its own ingredients
 
 ---
 
@@ -96,6 +91,7 @@ An object is a way to group related information together. Instead of having sepa
 - The slider : start with `null` (we'll create it later)
 - The button : start with `null` (we'll create it later)
 - The button position : an object with x and y coordinates (x: 150, y: 200)
+- The slider position : an object with x and y coordinates (x: 150, y: 350)
 - The button label : text like "Track 1"
 
 **Why these properties?** Each property stores one piece of information about the track. By putting them all in one object, we can easily access everything related to track 1.
@@ -110,6 +106,7 @@ An object is a way to group related information together. Instead of having sepa
 
 **What you need to do**: Create a second object called `track2` with the same structure as `track1`, but with different values:
 - The x coordinate of the button position should be 450 (instead of 150) - this places it to the right
+- The x coordinate of the slider position should be 450 (instead of 150) - this places it to the right
 - The button label should be "Track 2" (instead of "Track 1")
 
 **Positioning Logic**: To place buttons side by side, give them different x positions but the same y position. Think of it like placing two items on the same shelf - they're at the same height (y), but different horizontal positions (x).
@@ -156,7 +153,7 @@ Buttons are interactive elements that respond to clicks. In p5.js, you can creat
 
 **Visual Concept**: [SCHEMA PLACEHOLDER: Diagram showing button creation and positioning]
 
-**Documentation**: [`createButton()`](https://p5js.org/reference/#/p5/createButton) creates a button element.
+**Documentation**: [`createButton()`](https://p5js.org/reference/p5/createButton) creates a button element.
 
 **Test it!** You should see two buttons displayed on the screen! Click on the buttons and look at the console in the p5.js editor (at the bottom of the screen). You should see your `console.log()` messages appear every time you click a button. This is a great way to verify that your buttons work before adding the full play/pause functionality!
 
@@ -188,7 +185,7 @@ Sounds need to be loaded before you can play them. In p5.js, we use the `preload
 
 **The process**: Think of it like this - you're telling p5.js "go get this sound file and store it in the track object so we can use it later."
 
-**Documentation**: [`loadSound()`](https://p5js.org/reference/#/p5.sound/p5.SoundFile) loads sound files. Note: You need to include the p5.sound library!
+**Documentation**: [`loadSound()`](https://p5js.org/reference/p5.SoundFile/) loads sound files. Note: You need to include the p5.sound library!
 
 **Test it!** The sounds should load without errors. Check the console if something goes wrong.
 
@@ -204,7 +201,7 @@ Sounds need to be loaded before you can play them. In p5.js, we use the `preload
 
 **The process**: For each track, take the volume value from the track object and apply it to the sound. This connects the volume setting to the actual sound playback.
 
-**Documentation**: [`.setVolume()`](https://p5js.org/reference/#/p5.sound/p5.SoundFile/setVolume) sets the volume of a sound.
+**Documentation**: [`.setVolume()`](https://p5js.org/reference/p5.SoundFile/setVolume/) sets the volume of a sound.
 
 ---
 
@@ -243,7 +240,7 @@ Sliders are controls that let users adjust a value by dragging. Each track needs
 
 **Visual Concept**: [SCHEMA PLACEHOLDER: Layout diagram showing buttons and sliders positioned for each track]
 
-**Documentation**: [`createSlider()`](https://p5js.org/reference/#/p5/createSlider) creates a slider element.
+**Documentation**: [`createSlider()`](https://p5js.org/reference/p5/createSlider) creates a slider element.
 
 **Test it!** You should see two sliders on the screen that you can drag!
 
@@ -258,6 +255,8 @@ Sliders are controls that let users adjust a value by dragging. Each track needs
 **What you need to do**: In your `draw()` function, draw text above each slider. The text should say "Volume" and be positioned just above each slider. To draw text in p5.js, you'll use the `text()` function.
 
 **The process**: Think about where each slider is positioned, then place the text slightly above it. You'll use the same x coordinate as the slider, but a slightly smaller y coordinate (higher up on the screen, because y coordinates increase downward). Think of it like placing a label above an object - you want it at the same horizontal position (x), but slightly higher (smaller y).
+
+**Documentation**: [`text()`](https://p5js.org/reference/p5/text/) draws text to the canvas.
 
 **Test it!** You should see "Volume" text above each slider!
 
@@ -294,10 +293,10 @@ A toggle switches between two states. For play/pause:
 **The order matters**: Make sure to set the volume and loop settings before playing, so the sound starts with the correct settings.
 
 **Documentation**: 
-- [`.isPlaying()`](https://p5js.org/reference/#/p5.sound/p5.SoundFile/isPlaying) checks if sound is playing
-- [`.pause()`](https://p5js.org/reference/#/p5.sound/p5.SoundFile/pause) pauses sound
-- [`.play()`](https://p5js.org/reference/#/p5.sound/p5.SoundFile/play) plays sound
-- [`.setLoop()`](https://p5js.org/reference/#/p5.sound/p5.SoundFile/setLoop) makes sound loop
+- [`.isPlaying()`](https://p5js.org/reference/p5.SoundFile/isPlaying/) checks if sound is playing
+- [`.pause()`](https://p5js.org/reference/p5.SoundFile/pause/) pauses sound
+- [`.play()`](https://p5js.org/reference/p5.SoundFile/play/) plays sound
+- [`.setLoop()`](https://p5js.org/reference/p5.SoundFile/setLoop/) makes sound loop
 
 ### Step 5B: Connecting Buttons to Toggle Function
 
@@ -311,7 +310,7 @@ A toggle switches between two states. For play/pause:
 
 **Visual Concept**: [SCHEMA PLACEHOLDER: Diagram showing button connection with mousePressed callback]
 
-**Documentation**: [`.mousePressed()`](https://p5js.org/reference/#/p5.Element/mousePressed) connects a function to button clicks.
+**Documentation**: [`.mousePressed()`](https://p5js.org/reference/p5.Element/mousePressed) connects a function to button clicks.
 
 **Test it!** Click the buttons - sounds should play and pause!
 

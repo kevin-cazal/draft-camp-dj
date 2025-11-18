@@ -47,7 +47,7 @@ function draw() {
 
 **Comprendre les fonctions** : Le code ci-dessus utilise des **fonctions** - ce sont comme des recettes qui contiennent des instructions. `setup()` et `draw()` sont des fonctions spéciales que p5.js appelle automatiquement. Nous créerons nos propres fonctions plus tard dans ce projet !
 
-**Documentation** : Apprenez-en plus sur [`setup()`](https://p5js.org/reference/#/p5/setup) et [`draw()`](https://p5js.org/reference/#/p5/draw) dans la documentation p5.js.
+**Documentation** : Apprenez-en plus sur [`setup()`](https://p5js.org/reference/p5/setup) et [`draw()`](https://p5js.org/reference/p5/draw) dans la documentation p5.js.
 
 ---
 
@@ -64,11 +64,6 @@ Dans ce projet, nous allons utiliser **des objets** pour organiser notre code.
 Toutes ces informations appartiennent ensemble car elles concernent UNE piste. C'est pourquoi nous les mettons toutes dans UN objet !
 
 **Concept visuel** : [PLACEHOLDER SCHÉMA : Diagramme montrant un objet Track avec toutes ses propriétés : sound, volume, isPlaying, button, slider]
-
-Pensez-y comme à une carte de recette :
-- **Objet** = la carte de recette
-- **Propriétés** = les ingrédients et instructions sur la carte
-- Chaque piste est une carte de recette séparée avec ses propres ingrédients
 
 ---
 
@@ -106,6 +101,7 @@ Un objet est un moyen de regrouper des informations liées ensemble. Au lieu d'a
 - Le slider : commencez par `null` (nous le créerons plus tard)
 - Le bouton : commencez par `null` (nous le créerons plus tard)
 - La position du bouton : un objet avec les coordonnées x et y (x: 150, y: 200)
+- La position du slider : un objet avec les coordonnées x et y (x: 150, y: 350)
 - Le label du bouton : texte comme "Track 1"
 
 **Pourquoi ces propriétés ?** Chaque propriété stocke une information sur la piste. En les mettant toutes dans un objet, nous pouvons facilement accéder à tout ce qui concerne la piste 1.
@@ -120,6 +116,7 @@ Un objet est un moyen de regrouper des informations liées ensemble. Au lieu d'a
 
 **Ce que vous devez faire** : Créez un deuxième objet appelé `track2` avec la même structure que `track1`, mais avec des valeurs différentes :
 - La coordonnée x de la position du bouton devrait être 450 (au lieu de 150) - cela le place à droite
+- La coordonnée x de la position du slider devrait être 450 (au lieu de 150) - cela le place à droite
 - Le label du bouton devrait être "Track 2" (au lieu de "Track 1")
 
 **Logique de positionnement** : Pour placer les boutons côte à côte, donnez-leur des positions x différentes mais la même position y. Pensez-y comme placer deux objets sur la même étagère - ils sont à la même hauteur (y), mais à des positions horizontales différentes (x).
@@ -166,7 +163,7 @@ Les boutons sont des éléments interactifs qui répondent aux clics. Dans p5.js
 
 **Concept visuel** : [PLACEHOLDER SCHÉMA : Diagramme montrant la création et le positionnement des boutons]
 
-**Documentation** : [`createButton()`](https://p5js.org/reference/#/p5/createButton) crée un élément bouton.
+**Documentation** : [`createButton()`](https://p5js.org/reference/p5/createButton) crée un élément bouton.
 
 **Testez !** Vous devriez voir deux boutons affichés à l'écran ! Cliquez sur les boutons et regardez la console dans l'éditeur p5.js (en bas de l'écran). Vous devriez voir vos messages `console.log()` apparaître chaque fois que vous cliquez sur un bouton. C'est une excellente façon de vérifier que vos boutons fonctionnent avant d'ajouter la fonctionnalité complète de play/pause !
 
@@ -198,7 +195,7 @@ Les sons doivent être chargés avant de pouvoir les jouer. Dans p5.js, nous uti
 
 **Le processus** : Pensez-y comme ceci - vous dites à p5.js "va chercher ce fichier son et stocke-le dans l'objet track pour que nous puissions l'utiliser plus tard."
 
-**Documentation** : [`loadSound()`](https://p5js.org/reference/#/p5.sound/p5.SoundFile) charge les fichiers son. Note : Vous devez inclure la bibliothèque p5.sound !
+**Documentation** : [`loadSound()`](https://p5js.org/reference/p5.SoundFile/) charge les fichiers son. Note : Vous devez inclure la bibliothèque p5.sound !
 
 **Testez !** Les sons devraient se charger sans erreur. Vérifiez la console si quelque chose ne va pas.
 
@@ -214,7 +211,7 @@ Les sons doivent être chargés avant de pouvoir les jouer. Dans p5.js, nous uti
 
 **Le processus** : Pour chaque piste, prenez la valeur de volume de l'objet track et appliquez-la au son. Cela connecte le réglage de volume à la lecture réelle du son.
 
-**Documentation** : [`.setVolume()`](https://p5js.org/reference/#/p5.sound/p5.SoundFile/setVolume) définit le volume d'un son.
+**Documentation** : [`.setVolume()`](https://p5js.org/reference/p5.SoundFile/setVolume/) définit le volume d'un son.
 
 ---
 
@@ -253,7 +250,7 @@ Les sliders sont des contrôles qui permettent aux utilisateurs d'ajuster une va
 
 **Concept visuel** : [PLACEHOLDER SCHÉMA : Diagramme de mise en page montrant les boutons et sliders positionnés pour chaque piste]
 
-**Documentation** : [`createSlider()`](https://p5js.org/reference/#/p5/createSlider) crée un élément slider.
+**Documentation** : [`createSlider()`](https://p5js.org/reference/p5/createSlider) crée un élément slider.
 
 **Testez !** Vous devriez voir deux sliders à l'écran que vous pouvez faire glisser !
 
@@ -268,6 +265,8 @@ Les sliders sont des contrôles qui permettent aux utilisateurs d'ajuster une va
 **Ce que vous devez faire** : Dans votre fonction `draw()`, dessinez du texte au-dessus de chaque slider. Le texte devrait dire "Volume" et être positionné juste au-dessus de chaque slider. Pour dessiner du texte dans p5.js, vous utiliserez la fonction `text()`.
 
 **Le processus** : Réfléchissez à où chaque slider est positionné, puis placez le texte légèrement au-dessus. Vous utiliserez la même coordonnée x que le slider, mais une coordonnée y légèrement plus petite (plus haut sur l'écran, car les coordonnées y augmentent vers le bas). Pensez-y comme placer une étiquette au-dessus d'un objet - vous voulez qu'elle soit au même endroit horizontalement (x), mais légèrement plus haute (y plus petit).
+
+**Documentation** : [`text()`](https://p5js.org/reference/p5/text/) dessine du texte sur le canvas.
 
 **Testez !** Vous devriez voir le texte "Volume" au-dessus de chaque slider !
 
@@ -304,10 +303,10 @@ Une bascule change entre deux états. Pour play/pause :
 **L'ordre compte** : Assurez-vous de définir le volume et les réglages de boucle avant de jouer, pour que le son commence avec les bons réglages.
 
 **Documentation** :
-- [`.isPlaying()`](https://p5js.org/reference/#/p5.sound/p5.SoundFile/isPlaying) vérifie si le son est en lecture
-- [`.pause()`](https://p5js.org/reference/#/p5.sound/p5.SoundFile/pause) met le son en pause
-- [`.play()`](https://p5js.org/reference/#/p5.sound/p5.SoundFile/play) joue le son
-- [`.setLoop()`](https://p5js.org/reference/#/p5.sound/p5.SoundFile/setLoop) fait boucler le son
+- [`.isPlaying()`](https://p5js.org/reference/p5.SoundFile/isPlaying/) vérifie si le son est en lecture
+- [`.pause()`](https://p5js.org/reference/p5.SoundFile/pause/) met le son en pause
+- [`.play()`](https://p5js.org/reference/p5.SoundFile/play/) joue le son
+- [`.setLoop()`](https://p5js.org/reference/p5.SoundFile/setLoop/) fait boucler le son
 
 ### Étape 5B : Connecter les boutons à la fonction de bascule
 
@@ -321,7 +320,7 @@ Une bascule change entre deux états. Pour play/pause :
 
 **Concept visuel** : [PLACEHOLDER SCHÉMA : Diagramme montrant la connexion du bouton avec le callback mousePressed]
 
-**Documentation** : [`.mousePressed()`](https://p5js.org/reference/#/p5.Element/mousePressed) connecte une fonction aux clics de bouton.
+**Documentation** : [`.mousePressed()`](https://p5js.org/reference/p5.Element/mousePressed) connecte une fonction aux clics de bouton.
 
 **Testez !** Cliquez sur les boutons - les sons devraient jouer et se mettre en pause !
 
