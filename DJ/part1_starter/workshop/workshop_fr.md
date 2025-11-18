@@ -63,7 +63,7 @@ Dans ce projet, nous allons utiliser **des objets** pour organiser notre code.
 
 Toutes ces informations appartiennent ensemble car elles concernent UNE piste. C'est pourquoi nous les mettons toutes dans UN objet !
 
-**Concept visuel** : [PLACEHOLDER SCHÉMA : Diagramme montrant un objet Track avec toutes ses propriétés : sound, volume, isPlaying, button, slider]
+**Concept visuel** : ![Diagramme montrant un objet Track avec toutes ses propriétés : sound, volume, isPlaying, button, slider](img/object.svg)
 
 ---
 
@@ -106,7 +106,6 @@ Un objet est un moyen de regrouper des informations liées ensemble. Au lieu d'a
 
 **Pourquoi ces propriétés ?** Chaque propriété stocke une information sur la piste. En les mettant toutes dans un objet, nous pouvons facilement accéder à tout ce qui concerne la piste 1.
 
-**Concept visuel** : [PLACEHOLDER SCHÉMA : Diagramme montrant la structure de l'objet track1 avec l'objet button imbriqué]
 
 **Documentation** : Apprenez-en plus sur [les objets JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects).
 
@@ -121,7 +120,7 @@ Un objet est un moyen de regrouper des informations liées ensemble. Au lieu d'a
 
 **Logique de positionnement** : Pour placer les boutons côte à côte, donnez-leur des positions x différentes mais la même position y. Pensez-y comme placer deux objets sur la même étagère - ils sont à la même hauteur (y), mais à des positions horizontales différentes (x).
 
-**Concept visuel** : [PLACEHOLDER SCHÉMA : Diagramme de mise en page montrant deux boutons de piste côte à côte]
+**Concept visuel** : ![Diagramme de mise en page montrant deux boutons de piste côte à côte](img/btn_position.svg)
 
 **Testez !** Vous ne verrez rien encore, mais vos objets sont créés. Vérifiez la console pour toute erreur.
 
@@ -161,7 +160,7 @@ Les boutons sont des éléments interactifs qui répondent aux clics. Dans p5.js
 
 **La connexion** : Quand vous connectez un bouton à une fonction, vous dites "quand ce bouton est cliqué, exécute cette fonction." Pour l'instant, votre fonction peut simplement afficher un message pour vérifier que le bouton fonctionne.
 
-**Concept visuel** : [PLACEHOLDER SCHÉMA : Diagramme montrant la création et le positionnement des boutons]
+**Concept visuel** : ![Diagramme montrant la création et le positionnement des boutons](img/obj_to_canvas.svg)
 
 **Documentation** : [`createButton()`](https://p5js.org/reference/p5/createButton) crée un élément bouton.
 
@@ -248,7 +247,7 @@ Les sliders sont des contrôles qui permettent aux utilisateurs d'ajuster une va
 
 **Pourquoi utiliser sliderPosition ?** Cela garde la position organisée dans l'objet track, ce qui facilite les modifications ultérieures. C'est comme avoir l'adresse écrite - vous pouvez la trouver facilement !
 
-**Concept visuel** : [PLACEHOLDER SCHÉMA : Diagramme de mise en page montrant les boutons et sliders positionnés pour chaque piste]
+**Concept visuel** : ![Diagramme de mise en page montrant les boutons et sliders positionnés pour chaque piste](img/btn_slider_position.svg)
 
 **Documentation** : [`createSlider()`](https://p5js.org/reference/p5/createSlider) crée un élément slider.
 
@@ -318,7 +317,7 @@ Une bascule change entre deux états. Pour play/pause :
 
 **La connexion** : Pensez-y comme ceci - le bouton est connecté à la fonction de bascule, et quand il est cliqué, il passe l'objet track à la fonction. De cette façon, la fonction sait quelle piste contrôler.
 
-**Concept visuel** : [PLACEHOLDER SCHÉMA : Diagramme montrant la connexion du bouton avec le callback mousePressed]
+**Concept visuel** : ![Diagramme montrant la connexion du bouton avec le callback mousePressed](img/toggle_logic.svg)
 
 **Documentation** : [`.mousePressed()`](https://p5js.org/reference/p5.Element/mousePressed) connecte une fonction aux clics de bouton.
 
@@ -382,7 +381,7 @@ Votre table de mixage devrait maintenant fonctionner comme ceci :
    - Appliquer le volume aux sons en lecture
 3. **Détection des clics** : Quand un bouton est cliqué, basculez l'état de lecture de cette piste
 
-**Concept visuel** : [PLACEHOLDER SCHÉMA : Diagramme de flux montrant le flux complet du programme]
+**Concept visuel** : ![Diagramme de flux montrant le flux complet du programme](img/program_logic.svg)
 
 ### Tester votre table de mixage
 

@@ -53,7 +53,7 @@ In this project, we're going to use **objects** to organize our code.
 
 All of this information belongs together because it's all about ONE track. That's why we put it all in ONE object!
 
-**Visual Concept**: [SCHEMA PLACEHOLDER: Diagram showing a Track object with all its properties: sound, volume, isPlaying, button, slider]
+**Visual Concept**: ![Diagram showing a Track object with all its properties: sound, volume, isPlaying, button, slider](img/object.svg)
 
 ---
 
@@ -111,7 +111,7 @@ An object is a way to group related information together. Instead of having sepa
 
 **Positioning Logic**: To place buttons side by side, give them different x positions but the same y position. Think of it like placing two items on the same shelf - they're at the same height (y), but different horizontal positions (x).
 
-**Visual Concept**: [SCHEMA PLACEHOLDER: Layout diagram showing two track buttons side by side]
+**Visual Concept**: ![Layout diagram showing two track buttons side by side](img/btn_position.svg)
 
 **Test it!** You won't see anything yet, but your objects are created. Check the console for any errors.
 
@@ -151,7 +151,7 @@ Buttons are interactive elements that respond to clicks. In p5.js, you can creat
 
 **The connection**: When you connect a button to a function, you're saying "when this button is clicked, run this function." For now, your function can simply display a message to verify that the button works.
 
-**Visual Concept**: [SCHEMA PLACEHOLDER: Diagram showing button creation and positioning]
+**Visual Concept**: ![Diagram showing button creation and positioning](img/obj_to_canvas.svg)
 
 **Documentation**: [`createButton()`](https://p5js.org/reference/p5/createButton) creates a button element.
 
@@ -238,7 +238,7 @@ Sliders are controls that let users adjust a value by dragging. Each track needs
 
 **Why use sliderPosition?** It keeps the position organized in the track object, making it easy to change later. It's like having the address written down - you can find it easily!
 
-**Visual Concept**: [SCHEMA PLACEHOLDER: Layout diagram showing buttons and sliders positioned for each track]
+**Visual Concept**: ![Layout diagram showing buttons and sliders positioned for each track](img/btn_slider_position.svg)
 
 **Documentation**: [`createSlider()`](https://p5js.org/reference/p5/createSlider) creates a slider element.
 
@@ -308,7 +308,7 @@ A toggle switches between two states. For play/pause:
 
 **The connection**: Think of it like this - the button is connected to the toggle function, and when clicked, it passes the track object to the function. This way, the function knows which track to control.
 
-**Visual Concept**: [SCHEMA PLACEHOLDER: Diagram showing button connection with mousePressed callback]
+**Visual Concept**: ![Diagram showing button connection with mousePressed callback](img/toggle_logic.svg)
 
 **Documentation**: [`.mousePressed()`](https://p5js.org/reference/p5.Element/mousePressed) connects a function to button clicks.
 
@@ -372,7 +372,7 @@ Your mixing deck should now work like this:
    - Apply volume to playing sounds
 3. **Click Detection**: When a button is clicked, toggle that track's play state
 
-**Visual Concept**: [SCHEMA PLACEHOLDER: Flow diagram showing the complete program flow]
+**Visual Concept**: ![Flow diagram showing the complete program flow](img/program_logic.svg)
 
 ### Testing Your Mixing Deck
 
