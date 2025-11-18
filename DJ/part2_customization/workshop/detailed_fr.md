@@ -84,7 +84,6 @@ bgFileInput.attribute('accept', 'image/*');
 - [`attribute('accept', 'image/*')`](https://p5js.org/reference/#/p5.Element/attribute) restreint la sélection de fichiers aux images uniquement
   - `'image/*'` signifie "n'importe quel type d'image" (JPG, PNG, GIF, etc.)
 
-**Concept visuel** : [PLACEHOLDER SCHÉMA : Diagramme montrant le bouton de saisie de fichier en haut à gauche]
 
 **Testez !** Vous devriez voir un bouton "Choisir un fichier" en haut à gauche. Essayez de cliquer dessus - un navigateur de fichiers devrait s'ouvrir, mais il ne fera rien encore car nous n'avons pas créé la fonction de gestion.
 
@@ -111,7 +110,6 @@ function handleBackgroundImage(file) {
 
 **Pourquoi vérifier le type de fichier ?** Les utilisateurs pourraient accidentellement sélectionner le mauvais type de fichier. Cette vérification empêche les erreurs.
 
-**Concept visuel** : [PLACEHOLDER SCHÉMA : Diagramme montrant la sélection de fichier → fonction de gestion → chargement d'image]
 
 **Testez !** Essayez de télécharger une image - le fichier devrait être sélectionné, mais vous ne le verrez pas encore (nous l'ajouterons ensuite).
 
@@ -139,7 +137,6 @@ if (bgImage) {
 - `else { background(255); }` - si pas d'image, utilisez le fond blanc
   - C'est le fond par défaut
 
-**Concept visuel** : [PLACEHOLDER SCHÉMA : Diagramme montrant le fond conditionnel - image si chargée, blanc si non]
 
 **Testez !** Téléchargez une image - elle devrait maintenant apparaître comme fond, remplissant tout le canvas !
 
@@ -205,7 +202,6 @@ track1.fileInput.attribute('accept', 'audio/*');
 
 **Pourquoi passer l'objet track ?** Pour que la fonction de gestion sache quelle piste mettre à jour. Cela nous permet d'utiliser le même gestionnaire pour les deux pistes !
 
-**Concept visuel** : [PLACEHOLDER SCHÉMA : Diagramme montrant les boutons de saisie de fichier empilés verticalement]
 
 **Testez !** Vous devriez voir un deuxième bouton "Choisir un fichier" sous le premier. Il ne fonctionnera pas encore car nous n'avons pas créé la fonction de gestion.
 
@@ -244,7 +240,7 @@ function handleSoundUpload(file, track) {
 
 **Pourquoi arrêter le son actuel ?** Si un son est en lecture quand un nouveau est téléchargé, nous devrions l'arrêter d'abord. Sinon, les deux sons pourraient jouer en même temps, ou l'ancien son pourrait continuer à jouer.
 
-**Concept visuel** : [PLACEHOLDER SCHÉMA : Diagramme montrant le flux de téléchargement de son - sélection de fichier → arrêter l'ancien son → charger le nouveau son]
+**Concept visuel** : ![Diagramme montrant le flux de téléchargement de son - sélection de fichier → arrêter l'ancien son → charger le nouveau son](img/custom_sound_file_upload.svg)
 
 **Testez !** Téléchargez un fichier audio pour la piste 1 - il devrait remplacer le son par défaut ! Essayez de le jouer pour vous assurer que cela fonctionne.
 
@@ -272,7 +268,6 @@ track2.fileInput.attribute('accept', 'audio/*');
 
 **Pourquoi le même gestionnaire ?** Parce que nous passons l'objet track comme paramètre, la même fonction fonctionne pour les deux pistes. C'est plus efficace que d'écrire le même code deux fois.
 
-**Concept visuel** : [PLACEHOLDER SCHÉMA : Diagramme montrant les deux file inputs de piste positionnés verticalement]
 
 **Testez !** Téléchargez des fichiers audio pour les deux pistes - ils devraient tous les deux fonctionner indépendamment !
 
@@ -300,7 +295,6 @@ text("Upload Track 2:", 10, 115);
   - Positionné juste au-dessus du bouton de saisie de fichier de fond
 - Même chose pour les labels de la piste 1 et de la piste 2
 
-**Concept visuel** : [PLACEHOLDER SCHÉMA : Diagramme montrant les labels positionnés au-dessus des file inputs]
 
 **Testez !** Les labels devraient rendre clair ce que fait chaque bouton !
 

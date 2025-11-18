@@ -1,5 +1,6 @@
 # Workshop: DJ Mixing Deck - Customization
 
+
 ## Welcome!
 
 Congratulations on completing the DJ Mixing Deck Starter! Now you're going to add customization features that let users upload their own sounds and background images. This makes your DJ deck truly personal and unique!
@@ -16,6 +17,9 @@ By the end of this workshop, you'll have:
 - ✅ **Mobile-friendly design** that works on phones and tablets
 - ✅ **Touch support** for mobile devices
 - ✅ **Responsive layout** that adapts to any screen size
+
+
+![Preview of the final result](img/canvas_final_2.svg)
 
 ---
 
@@ -36,7 +40,7 @@ In p5.js, you use `createFileInput()` to make a file upload button. When a user 
 3. Your program receives the file information
 4. You load and use the file (image or sound)
 
-**Visual Concept**: [SCHEMA PLACEHOLDER: Diagram showing file upload flow - button → file selection → file loading → use in program]
+**Visual Concept**: ![Diagram showing file upload flow - button → file selection → file loading → use in program](img/file_upload.svg)
 
 **Documentation**: [`createFileInput()`](https://p5js.org/reference/#/p5/createFileInput) creates a file upload button.
 
@@ -80,7 +84,6 @@ You want users to be able to upload their own background image. This replaces th
 - `position()` places it on screen
 - `attribute('accept', 'image/*')` restricts file selection to images only
 
-**Visual Concept**: [SCHEMA PLACEHOLDER: Diagram showing file input button positioned on screen]
 
 **Documentation**: 
 - [`createFileInput()`](https://p5js.org/reference/#/p5/createFileInput)
@@ -123,7 +126,6 @@ You want users to be able to upload their own background image. This replaces th
 - `image()` draws the image to fill the entire canvas
 - `width` and `height` make it fill the canvas size
 
-**Visual Concept**: [SCHEMA PLACEHOLDER: Diagram showing conditional background - image if loaded, white if not]
 
 **Documentation**: [`image()`](https://p5js.org/reference/#/p5/image) draws images.
 
@@ -168,7 +170,6 @@ Now you want users to upload their own sounds for each track. This is similar to
 - `position()` places it below the background upload button
 - `accept` restricts to audio files only
 
-**Visual Concept**: [SCHEMA PLACEHOLDER: Diagram showing file input buttons stacked vertically]
 
 **Test it!** You should see a second file input button, but it won't work yet (we'll add the handler next).
 
@@ -214,7 +215,6 @@ Now you want users to upload their own sounds for each track. This is similar to
 
 **Why the same handler?** The `handleSoundUpload()` function works for any track because we pass the track object as a parameter. This is code reuse - we write the logic once and use it for both tracks!
 
-**Visual Concept**: [SCHEMA PLACEHOLDER: Diagram showing both track file inputs positioned vertically]
 
 **Test it!** Upload audio files for both tracks - they should both work!
 
@@ -238,7 +238,6 @@ Now you want users to upload their own sounds for each track. This is similar to
 - Position labels just above each file input button
 - Use `fill(0)` for black text
 
-**Visual Concept**: [SCHEMA PLACEHOLDER: Diagram showing labels positioned above file inputs]
 
 **Test it!** The labels should make it clear what each button does!
 
@@ -323,7 +322,7 @@ Your DJ deck should work on mobile devices! This means:
 - Track 1: `centerX - width * 0.2` (left of center)
 - Track 2: `centerX + width * 0.2` (right of center)
 
-**Visual Concept**: [SCHEMA PLACEHOLDER: Diagram showing responsive positioning based on screen size]
+**Visual Concept**: ![Diagram showing responsive positioning based on screen size](img/responsiveness.svg)
 
 **Test it!** Resize your browser window - the buttons and sliders should move to stay in the right positions!
 

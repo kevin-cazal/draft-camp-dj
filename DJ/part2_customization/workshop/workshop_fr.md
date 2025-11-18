@@ -1,5 +1,6 @@
 # Atelier : Table de Mixage DJ - Personnalisation
 
+
 ## Bienvenue !
 
 Félicitations pour avoir terminé le DJ Mixing Deck Starter ! Maintenant, vous allez ajouter des fonctionnalités de personnalisation qui permettent aux utilisateurs de télécharger leurs propres sons et images de fond. Cela rend votre table de mixage DJ vraiment personnelle et unique !
@@ -16,6 +17,8 @@ Félicitations pour avoir terminé le DJ Mixing Deck Starter ! Maintenant, vous 
 - ✅ **Design adapté au mobile** qui fonctionne sur les téléphones et tablettes
 - ✅ **Support tactile** pour les appareils mobiles
 - ✅ **Mise en page responsive** qui s'adapte à toute taille d'écran
+
+![Aperçu du résultat final](img/canvas_final_2.svg)
 
 ---
 
@@ -36,7 +39,7 @@ Dans p5.js, vous utilisez `createFileInput()` pour créer un bouton de télécha
 3. Votre programme reçoit les informations du fichier
 4. Vous chargez et utilisez le fichier (image ou son)
 
-**Concept visuel** : [PLACEHOLDER SCHÉMA : Diagramme montrant le flux de téléchargement de fichier - bouton → sélection de fichier → chargement de fichier → utilisation dans le programme]
+**Concept visuel** : ![Diagramme montrant le flux de téléchargement de fichier - bouton → sélection de fichier → chargement de fichier → utilisation dans le programme](img/file_upload.svg)
 
 **Documentation** : [`createFileInput()`](https://p5js.org/reference/#/p5/createFileInput) crée un bouton de téléchargement de fichier.
 
@@ -81,7 +84,6 @@ Puis dans `setup()`, appelez `setupFileInputs()` après avoir créé le canvas.
 - `position()` le place à l'écran
 - `attribute('accept', 'image/*')` restreint la sélection de fichiers aux images uniquement
 
-**Concept visuel** : [PLACEHOLDER SCHÉMA : Diagramme montrant le bouton de saisie de fichier positionné à l'écran]
 
 **Documentation** :
 - [`createFileInput()`](https://p5js.org/reference/#/p5/createFileInput)
@@ -123,7 +125,6 @@ Puis dans votre fonction `draw()`, appelez `drawBackground()` au début.
 - `image()` dessine l'image pour remplir tout le canvas
 - `width` et `height` la font remplir la taille du canvas
 
-**Concept visuel** : [PLACEHOLDER SCHÉMA : Diagramme montrant le fond conditionnel - image si chargée, blanc si non]
 
 **Documentation** : [`image()`](https://p5js.org/reference/#/p5/image) dessine les images.
 
@@ -163,7 +164,6 @@ Maintenant, vous voulez que les utilisateurs téléchargent leurs propres sons p
 - Nous passons à la fois le fichier et l'objet track au gestionnaire
 - `position()` le place sous le bouton de téléchargement de fond
 
-**Concept visuel** : [PLACEHOLDER SCHÉMA : Diagramme montrant les boutons de saisie de fichier empilés verticalement]
 
 **Testez !** Vous devriez voir un deuxième bouton de saisie de fichier, mais il ne fonctionnera pas encore (nous ajouterons le gestionnaire ensuite).
 
@@ -209,7 +209,6 @@ Créez aussi les fonctions helper :
 - Plus facile à maintenir
 - Moins répétitif
 
-**Concept visuel** : [PLACEHOLDER SCHÉMA : Diagramme montrant les deux file inputs de piste positionnés verticalement]
 
 **Testez !** Téléchargez des fichiers audio pour les deux pistes - ils devraient tous les deux fonctionner !
 
@@ -231,7 +230,6 @@ Créez aussi les fonctions helper :
 - Positionnez les labels juste au-dessus de chaque bouton de saisie de fichier
 - Utilisez `fill(0)` pour le texte noir
 
-**Concept visuel** : [PLACEHOLDER SCHÉMA : Diagramme montrant les labels positionnés au-dessus des file inputs]
 
 **Testez !** Les labels devraient rendre clair ce que fait chaque bouton !
 
@@ -310,7 +308,7 @@ Votre table de mixage DJ devrait fonctionner sur les appareils mobiles ! Cela si
 - Piste 1 : `centerX - width * 0.2` (à gauche du centre)
 - Piste 2 : `centerX + width * 0.2` (à droite du centre)
 
-**Concept visuel** : [PLACEHOLDER SCHÉMA : Diagramme montrant le positionnement responsive basé sur la taille de l'écran]
+**Concept visuel** : ![Diagramme montrant le positionnement responsive basé sur la taille de l'écran](img/responsiveness.svg)
 
 **Testez !** Redimensionnez la fenêtre de votre navigateur - les boutons et sliders devraient se déplacer pour rester aux bonnes positions !
 

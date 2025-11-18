@@ -84,7 +84,6 @@ bgFileInput.attribute('accept', 'image/*');
 - [`attribute('accept', 'image/*')`](https://p5js.org/reference/#/p5.Element/attribute) restricts file selection to images only
   - `'image/*'` means "any image type" (JPG, PNG, GIF, etc.)
 
-**Visual Concept**: [SCHEMA PLACEHOLDER: Diagram showing file input button in top left corner]
 
 **Test it!** You should see a "Choose File" button in the top left. Try clicking it - a file browser should open, but it won't do anything yet because we haven't created the handler function.
 
@@ -111,7 +110,6 @@ function handleBackgroundImage(file) {
 
 **Why check file type?** Users might accidentally select the wrong type of file. This check prevents errors.
 
-**Visual Concept**: [SCHEMA PLACEHOLDER: Diagram showing file selection → handler function → image loading]
 
 **Test it!** Try uploading an image - the file should be selected, but you won't see it yet (we'll add that next).
 
@@ -139,7 +137,6 @@ if (bgImage) {
 - `else { background(255); }` - if no image, use white background
   - This is the default background
 
-**Visual Concept**: [SCHEMA PLACEHOLDER: Diagram showing conditional background - image if loaded, white if not]
 
 **Test it!** Upload an image - it should now appear as the background, filling the entire canvas!
 
@@ -205,7 +202,6 @@ track1.fileInput.attribute('accept', 'audio/*');
 
 **Why pass the track object?** So the handler function knows which track to update. This lets us use the same handler for both tracks!
 
-**Visual Concept**: [SCHEMA PLACEHOLDER: Diagram showing file input buttons stacked vertically]
 
 **Test it!** You should see a second "Choose File" button below the first one. It won't work yet because we haven't created the handler function.
 
@@ -244,7 +240,7 @@ function handleSoundUpload(file, track) {
 
 **Why stop the current sound?** If a sound is playing when a new one is uploaded, we should stop it first. Otherwise, both sounds might play at once, or the old sound might continue playing.
 
-**Visual Concept**: [SCHEMA PLACEHOLDER: Diagram showing sound upload flow - file selection → stop old sound → load new sound]
+**Visual Concept**: ![Diagram showing sound upload flow - file selection → stop old sound → load new sound](img/custom_sound_file_upload.svg)
 
 **Test it!** Upload an audio file for track 1 - it should replace the default sound! Try playing it to make sure it works.
 
@@ -272,7 +268,6 @@ track2.fileInput.attribute('accept', 'audio/*');
 
 **Why the same handler?** Because we pass the track object as a parameter, the same function works for both tracks. This is more efficient than writing the same code twice.
 
-**Visual Concept**: [SCHEMA PLACEHOLDER: Diagram showing both track file inputs positioned vertically]
 
 **Test it!** Upload audio files for both tracks - they should both work independently!
 
@@ -300,7 +295,6 @@ text("Upload Track 2:", 10, 115);
   - Positioned just above the background file input button
 - Same for track 1 and track 2 labels
 
-**Visual Concept**: [SCHEMA PLACEHOLDER: Diagram showing labels positioned above file inputs]
 
 **Test it!** The labels should make it clear what each button does!
 
