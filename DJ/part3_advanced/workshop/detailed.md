@@ -103,7 +103,7 @@ function setupTrackSliders(track) {
 - [`sound.jump()`](https://p5js.org/reference/p5.SoundFile/jump) jumps to a specific time
 - [`sound.currentTime()`](https://p5js.org/reference/p5.SoundFile/currentTime) gets current playback time
 
-**Visual Concept**: [SCHEMA PLACEHOLDER: Diagram showing time slider with 0% at start, 100% at end, and jumping to middle]
+**Visual Concept**: ![Time slider with jump functionality](img/set_position.gif)
 
 **Test it!** You should see a new slider below the volume slider. Try dragging it - the track should jump to that position!
 
@@ -174,7 +174,7 @@ function draw() {
 
 **Why update in draw()?** Because `draw()` runs continuously, the slider will update smoothly as the track plays.
 
-**Visual Concept**: [SCHEMA PLACEHOLDER: Diagram showing slider updating as track plays - 0% → 25% → 50% → 75% → 100%]
+**Visual Concept**: ![Time slider updating during playback](img/playback_time.gif)
 
 **Test it!** Play a track and watch the time slider move from left to right as it plays!
 
@@ -221,7 +221,6 @@ function formatTime(seconds) {
 - [`%` operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Remainder) gets remainder
 - [`String.padStart()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padStart) pads strings
 
-**Visual Concept**: [SCHEMA PLACEHOLDER: Diagram showing conversion: 125 seconds → 2 minutes, 5 seconds → "02:05"]
 
 **Test it!** Try calling `formatTime(125)` - it should return "02:05"!
 
@@ -260,7 +259,6 @@ function draw() {
 - `timeText = formatTime(elapsed) + " / " + formatTime(total)` - creates "02:05 / 03:42"
 - Displays below the time slider (y + 35 pixels)
 
-**Visual Concept**: [SCHEMA PLACEHOLDER: Diagram showing time display: "00:15 / 03:42" below time slider]
 
 **Test it!** You should see time displayed as "00:15 / 03:42" (elapsed / total) below each time slider!
 
@@ -319,7 +317,6 @@ function setup() {
 - `.position(width/2 - 100, height * 0.75)` - centered horizontally, 75% down screen
 - `.style('width', '200px')` - makes it 200 pixels wide
 
-**Visual Concept**: [SCHEMA PLACEHOLDER: Diagram showing crossfader slider at bottom center of screen]
 
 **Test it!** You should see a slider at the bottom center of the screen!
 
@@ -371,7 +368,10 @@ function draw() {
 - Trigonometric curves create smooth, natural-sounding transitions
 - Professional DJ software uses similar curves
 
-**Visual Concept**: [SCHEMA PLACEHOLDER: Diagram showing crossfade curves - track1 fades from 1.0 to 0.0, track2 fades from 0.0 to 1.0]
+**Visual Concept**: 
+![Crossfading animation](img/crossfading.gif)
+![Sin and cos curves](img/sin_cos.png)
+![Crossfade curves](img/crossfading_curves.png)
 
 **Documentation**: 
 - [`cos()`](https://p5js.org/reference/p5/cos) and [`sin()`](https://p5js.org/reference/p5/sin) for smooth curves
@@ -508,7 +508,7 @@ function draw() {
 - We want to see the beat even if crossfader is at 0%
 - This shows the actual rhythm of the music, not the output volume
 
-**Visual Concept**: [SCHEMA PLACEHOLDER: Diagram showing circles pulsing - small at quiet moments, large at beats]
+**Visual Concept**: ![BPM visualization - pulsating circles](img/crossfading.gif)
 
 **Documentation**: [`amp.getLevel()`](https://p5js.org/reference/p5.Amplitude/getLevel) gets current amplitude.
 

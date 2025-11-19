@@ -65,6 +65,8 @@ Time sliders let DJs jump to any position in a track. Think of it like a video p
 - [`sound.jump()`](https://p5js.org/reference/p5.SoundFile/jump) jumps to a specific time
 - [`sound.currentTime()`](https://p5js.org/reference/p5.SoundFile/currentTime) gets the current playback time
 
+**Visual Concept**: ![Time slider with jump functionality](img/set_position.gif)
+
 ### Step 1C: Updating Time Slider Positions
 
 **Your Task**: Update your `updatePositions()` function to calculate time slider positions. Think about:
@@ -91,6 +93,8 @@ Then call `updateTimeSliders()` in your `draw()` function.
 - `currentTime()` gets how far into the track we are
 - We calculate progress as a percentage (0-100)
 - Update the slider value to show current position
+
+**Visual Concept**: ![Time slider updating during playback](img/playback_time.gif)
 
 **Test it!** Play a track and watch the time slider move. Try dragging it to jump to different positions!
 
@@ -174,6 +178,11 @@ Then call `applyCrossfader()` in your `draw()` function.
 
 **Why trigonometry?** It creates smooth, natural-sounding transitions instead of abrupt changes!
 
+**Visual Concept**: 
+![Crossfading animation](img/crossfading.gif)
+![Sin and cos curves](img/sin_cos.png)
+![Crossfade curves](img/crossfading_curves.png)
+
 **Documentation**: 
 - [`cos()`](https://p5js.org/reference/p5/cos) and [`sin()`](https://p5js.org/reference/p5/sin) for smooth curves
 
@@ -233,6 +242,8 @@ Then call `drawBPMVisualization()` in your `draw()` function.
 - Circles pulse in sync with the beat!
 
 **Important**: The amplitude is read from the raw audio, so it shows BPM even if volume or crossfader is at 0%!
+
+**Visual Concept**: ![BPM visualization - pulsating circles](img/crossfading.gif)
 
 **Test it!** Play tracks and watch the circles pulse with the beat!
 

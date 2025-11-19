@@ -65,6 +65,8 @@ Les sliders de temps permettent aux DJs de sauter à n'importe quelle position d
 - [`sound.jump()`](https://p5js.org/reference/p5.SoundFile/jump) saute à un temps spécifique
 - [`sound.currentTime()`](https://p5js.org/reference/p5.SoundFile/currentTime) obtient le temps de lecture actuel
 
+**Concept visuel** : ![Slider de temps avec fonctionnalité de saut](img/set_position.gif)
+
 ### Étape 1C : Mettre à jour les positions des sliders de temps
 
 **Votre tâche** : Mettez à jour votre fonction `updatePositions()` pour calculer les positions des sliders de temps. Réfléchissez à :
@@ -91,6 +93,8 @@ Puis appelez `updateTimeSliders()` dans votre fonction `draw()`.
 - `currentTime()` obtient jusqu'où nous sommes dans la piste
 - Nous calculons le progrès en pourcentage (0-100)
 - Mettez à jour la valeur du slider pour montrer la position actuelle
+
+**Concept visuel** : ![Slider de temps se mettant à jour pendant la lecture](img/playback_time.gif)
 
 **Testez !** Jouez une piste et regardez le slider de temps bouger. Essayez de le faire glisser pour sauter à différentes positions !
 
@@ -174,6 +178,11 @@ Puis appelez `applyCrossfader()` dans votre fonction `draw()`.
 
 **Pourquoi la trigonométrie ?** Elle crée des transitions fluides et naturelles au lieu de changements brusques !
 
+**Concept visuel** : 
+![Animation de crossfade](img/crossfading.gif)
+![Courbes sin et cos](img/sin_cos.png)
+![Courbes de crossfade](img/crossfading_curves.png)
+
 **Documentation** :
 - [`cos()`](https://p5js.org/reference/p5/cos) et [`sin()`](https://p5js.org/reference/p5/sin) pour des courbes fluides
 
@@ -233,6 +242,8 @@ Puis appelez `drawBPMVisualization()` dans votre fonction `draw()`.
 - Les cercles pulsent en synchronisation avec le rythme !
 
 **Important** : L'amplitude est lue depuis l'audio brut, donc elle montre le BPM même si le volume ou le crossfader est à 0% !
+
+**Concept visuel** : ![Visualisation BPM - cercles pulsants](img/crossfading.gif)
 
 **Testez !** Jouez des pistes et regardez les cercles pulser avec le rythme !
 
